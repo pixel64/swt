@@ -1,5 +1,6 @@
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.geom.Rectangle;
 
 public class Main extends BasicGame {
 
@@ -39,6 +40,9 @@ public class Main extends BasicGame {
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-
+        Rectangle rect = new Rectangle(0,0,10,10);
+        rect.setX(10);
+        rect.setY(10);
+        graphics.draw(rect);
     }
 }
