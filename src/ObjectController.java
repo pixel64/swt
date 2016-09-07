@@ -1,3 +1,7 @@
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
+
 import java.util.ArrayList;
 
 /**
@@ -21,6 +25,11 @@ public class ObjectController {
     public void update(){
         for(BaseEntity m: this.objects){
             m.onUpdate();
+        }
+    }
+    public void render(GameContainer gameContainer, Graphics graphics)  throws SlickException {
+        for(BaseEntity m: this.objects){
+            m.render(gameContainer, graphics);
         }
     }
 }

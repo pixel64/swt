@@ -22,14 +22,11 @@ public class Main extends BasicGame {
         {
             e.printStackTrace();
         }
-        System.out.println("Hello World!");
-        ObjectController instance = ObjectController.getInstance();
-        instance.update();
     }
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-
+        Player player1 = new Player(gameContainer);
     }
 
     @Override
@@ -40,9 +37,7 @@ public class Main extends BasicGame {
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        Rectangle rect = new Rectangle(0,0,10,10);
-        rect.setX(10);
-        rect.setY(10);
-        graphics.draw(rect);
+        ObjectController instance = ObjectController.getInstance();
+        instance.render(gameContainer,graphics);
     }
 }
