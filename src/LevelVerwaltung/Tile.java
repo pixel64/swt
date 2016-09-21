@@ -9,8 +9,10 @@ import SpielVerwaltung.BaseEntity;
  * Created by Kenanja on 21.09.2016.
  */
 public class Tile extends LevelEntity {
+    protected boolean dead;
     public Tile(String path, double x, double y, int width, int height, int maxAnimPhase) {
         super(path, x, y, width, height, maxAnimPhase);
+        dead = false;
     }
 
     public void onCollision(Player p){
@@ -198,4 +200,17 @@ public class Tile extends LevelEntity {
     public void onCollision(Shot s){
         s.setDead(true);
     }
+
+    public void update(){
+        setAnimationPhase(getAnimationPhase()+0.2);
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
 }
+

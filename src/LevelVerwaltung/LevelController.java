@@ -6,9 +6,9 @@ import LevelVerwaltung.SchussVerwaltung.Shot;
 import LevelVerwaltung.SchussVerwaltung.ShotController;
 import LevelVerwaltung.SpielerVerwaltung.Player;
 import LevelVerwaltung.SpielerVerwaltung.PlayerController;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
+import org.newdawn.slick.*;
+
+import java.util.ArrayList;
 
 /**
  * Created by Kenanja on 21.09.2016.
@@ -43,9 +43,36 @@ public class LevelController {
             le.render(gameContainer,graphics, offsetX, offsetY);
         }
         level.getPlayer().render(gameContainer, graphics,offsetX, offsetY);
+
+        //Healthbar und waffenCD anzeigen
+        graphics.setColor(Color.red);
+        graphics.fillRect(20,20,200,20);
+        graphics.setColor(Color.green);
+        graphics.fillRect(20,20,level.getPlayer().getHealth()*2,20);
+
+        graphics.setColor(Color.white);
+        graphics.fillRect(760,20,20,20);
+        graphics.setColor(Color.black);
+        graphics.drawRect(760,20,20,20);
+        graphics.setColor(Color.gray);
+        graphics.fillRect(761,(float)(40 - 20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),19,(float)(20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())));
+
+
+
     }
 
     public int update(GameContainer gameContainer){
+
+        //Clean up dead Tiles (used up powerups)
+        ArrayList<Tile> deadTiles = new ArrayList<Tile>();
+        for(Tile t: level.getTileList()){
+            if (t.isDead()){
+                deadTiles.add(t);
+            }
+        }
+        for(Tile t: deadTiles){
+            level.getTileList().remove(t);
+        }
 
         if (gameContainer.getInput().isKeyDown(Input.KEY_ESCAPE)){//Pausiert
             return 1;
@@ -58,6 +85,11 @@ public class LevelController {
 
         if(playerController.update(gameContainer, level) == true){ //Player ist gestorben
             return 2;
+        }
+
+        //Tileupdates;
+        for(Tile t: level.getTileList()){
+            t.update();
         }
 
         //Check Collisions

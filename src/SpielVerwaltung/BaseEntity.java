@@ -87,6 +87,9 @@ public class BaseEntity {
 
     public void setAnimationPhase(double animationPhase) {
         this.animationPhase = animationPhase;
+        if(this.animationPhase >= maxAnimPhase){
+            this.animationPhase -= maxAnimPhase;
+        }
     }
 
     public int getMaxAnimPhase() {return maxAnimPhase;}

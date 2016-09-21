@@ -104,4 +104,9 @@ public class Player extends LevelEntity{
             invulnerabilityTicks = 30;
         }
     }
+
+    public void addHealth(int health){
+        this.health += health;
+        if(health >100) health = 100;
+    }
 }
