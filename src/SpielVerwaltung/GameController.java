@@ -29,6 +29,7 @@ public class GameController{
     }
     public void update(GameContainer gameContainer){
         if (gameState == 0) {//TODO add Menu states
+            menuController.getTitleEntity().setAnimationPhase(0); //titlephase 0 = Welcome
             menuController.update(gameContainer);
         }
     }

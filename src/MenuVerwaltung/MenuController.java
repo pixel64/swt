@@ -20,15 +20,26 @@ public class MenuController {
         Input input= gameContainer.getInput();
         if (input.isKeyPressed(Input.KEY_ENTER)){
             menu.enterPressed();
+        } else if (input.isKeyPressed(Input.KEY_DOWN)){
+            menu.downPressed();
+        }else if (input.isKeyPressed(Input.KEY_UP)){
+            menu.upPressed();
+        }else if (input.isKeyPressed(Input.KEY_LEFT)){
+            menu.leftPressed();
+        }else if (input.isKeyPressed(Input.KEY_RIGHT)){
+            menu.rightPressed();
         }
     }
 
     public void render(GameContainer gameContainer, Graphics graphics){
         graphics.drawImage(menu.getBackground(),0,0);
+        menu.getTitleEntity().render(gameContainer,graphics);
         ArrayList<MenuEntity> menuEntities= menu.getMenuEntities();
         for(MenuEntity me : menuEntities)
         {
             me.render(gameContainer, graphics);
         }
     }
+
+    public MenuEntity getTitleEntity(){return menu.getTitleEntity();}
 }
