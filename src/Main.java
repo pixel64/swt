@@ -1,4 +1,5 @@
 
+import SpielVerwaltung.GameController;
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.Rectangle;
 
@@ -12,7 +13,7 @@ public class Main extends BasicGame {
     public static void main(String[] args) {
         try
         {
-            AppGameContainer app = new AppGameContainer(new Main("Titel"));
+            AppGameContainer app = new AppGameContainer(new Main("THMtertainment"));
             app.setDisplayMode(800, 600, false);
             app.setTargetFrameRate(60);
             app.setVSync(true);
@@ -26,18 +27,17 @@ public class Main extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        Player player1 = new Player(gameContainer);
     }
 
     @Override
     public void update(GameContainer gameContainer, int i) throws SlickException {
-        ObjectController instance = ObjectController.getInstance();
-        instance.update();
+        GameController instance = GameController.getInstance();
+        instance.update(gameContainer);
     }
 
     @Override
     public void render(GameContainer gameContainer, Graphics graphics) throws SlickException {
-        ObjectController instance = ObjectController.getInstance();
+        GameController instance = GameController.getInstance();
         instance.render(gameContainer,graphics);
     }
 }
