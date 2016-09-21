@@ -17,16 +17,19 @@ public class Shot extends LevelEntity {
     private double speedY;
     private boolean dead;
     private boolean influencedByGravity;
-    public Shot(String path, double x, double y, int width, int height, int maxAnimPhase, double speedX, double speedY, boolean influencedByGravity) {
+    public Shot(String path, double x, double y, int width, int height, int maxAnimPhase, double speedX, double speedY, boolean influencedByGravity, int damage) {
         super(path, x, y, width, height, maxAnimPhase);
         this.speedX = speedX;
         this.speedY = speedY;
         this.influencedByGravity = influencedByGravity;
+        this.damage = damage;
         dead = false;
     }
 
     public void onCollision(Enemy e){
+        System.out.println("hit enemy");
         e.takeDamage(damage);
+        dead = true;
     }
 
     public void onCollision(Player p){

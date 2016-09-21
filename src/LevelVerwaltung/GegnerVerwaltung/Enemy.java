@@ -19,6 +19,7 @@ public class Enemy extends LevelEntity {
         this.health = health;
         this.isBoss = isBoss;
         dead = false;
+        isInvulnerable = false;
         this.damage = damage;
     }
 
@@ -27,9 +28,11 @@ public class Enemy extends LevelEntity {
 
     public void takeDamage(int damage){
         if(!isInvulnerable){
+            System.out.println(health + "," + damage);
             health -= damage;
             if(health <= 0) dead = true;
         }
+        System.out.println(health);
     }
 
     public boolean isDead() {

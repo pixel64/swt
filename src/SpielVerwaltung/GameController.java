@@ -45,7 +45,7 @@ public class GameController{
 
         if (gameState == 1){
             int exit = levelController.update(gameContainer); // 0 für spielt weiter, 1 für oause, 2 für game over, 3 level clear
-            menuController.getTitleEntity().setAnimationPhase(exit);
+            menuController.getTitleEntity().setAnimationPhase(exit+1);
             if(exit == 1){
                 gameState = 2;
             } else if(exit ==2){
@@ -55,13 +55,14 @@ public class GameController{
                 levelnumber++;
                 if(levelnumber > maxLevelNumber){
                     gameState = 5;
+                    menuController.getTitleEntity().setAnimationPhase(exit+2);
                 }else {
                     levelController.loadLevel("level" + levelnumber + ".xml");
                 }
             }
         }
 
-        if (gameState == 2 || gameState ==4){
+        if (gameState == 2 || gameState ==4){ //Pausiert oder level clear
             int start = menuController.update(gameContainer);
             if (start ==1){
                 gameState =1;
@@ -70,13 +71,13 @@ public class GameController{
             }
         }
 
-        if (gameState == 3 || gameState == 5){
+        if (gameState == 3 || gameState == 5){ //Game over oder You win
             int start = menuController.update(gameContainer);
-            if(start == 1){
+            if(start == 1){ //Spiel starten
                 gameState = 1;
                 levelController.loadLevel("level1.xml");
                 levelnumber = 1;
-            }else if (start == 2) {
+            }else if (start == 2) { //Fullscreen
                 return true;
             }
         }

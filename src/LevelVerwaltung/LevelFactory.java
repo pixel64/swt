@@ -1,5 +1,6 @@
 package LevelVerwaltung;
 
+import LevelVerwaltung.GegnerVerwaltung.Enemy;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.util.xml.SlickXMLException;
@@ -33,6 +34,7 @@ public final class LevelFactory {
         l.addTile(new Tile("wall.png", 300, 460, 100, 40,1));
         l.addTile(new Tile("wall.png", 100, 300, 40, 400,1));
         l.addTile(new CoffeePack("durstloescher.png", 500, 400,20,20, 2, 70));
+        l.addEnemy(new Enemy("testenemy.png", 150, 460, 20,100,1,60,true, 30));
         l.getPlayer().setHealth(60);
         return l;
     }
