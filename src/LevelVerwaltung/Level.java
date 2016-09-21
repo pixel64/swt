@@ -66,4 +66,6 @@ public class Level {
 
     public Player getPlayer(){return player;}
 
+    public Image getBackgroundImage(){return backgroundImage;}
+
 }

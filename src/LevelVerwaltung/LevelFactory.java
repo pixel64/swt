@@ -16,7 +16,7 @@ public final class LevelFactory {
     public static Level loadLevel(String path){
         Level l = new Level();
         try {
-            l.setBackgroundImage(new Image("level1background.png"));
+            l.setBackgroundImage(new Image("res/img/level1background.png"));
         } catch (SlickException e) {
             e.printStackTrace();
         }

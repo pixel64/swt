@@ -11,14 +11,14 @@ import java.net.URL;
  * Created by pixel on 05.09.2016.
  */
 public class BaseEntity {
-    private double x;
-    private double y;
-    private int width;
-    private int height;
-    private double animationPhase;
-    private int maxAnimPhase;
-    private Shape hitbox;
-    private Image img;
+    protected double x;
+    protected double y;
+    protected int width;
+    protected int height;
+    protected double animationPhase;
+    protected int maxAnimPhase;
+    protected Shape hitbox;
+    protected Image img;
 	public BaseEntity(String path, double x, double y, int width, int height, int maxAnimPhase)
         {
             this.x = x;

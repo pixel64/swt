@@ -13,7 +13,22 @@ public class LevelController {
     }
 
     public void render(GameContainer gameContainer, Graphics graphics){
-
+        graphics.drawImage(level.getBackgroundImage(),0,0);
+        double offsetX = (level.getPlayer().getX()+ level.getPlayer().getWidth()/2) -400;
+        double offsetY = (level.getPlayer().getY()+level.getPlayer().getHeight()/2) -300;
+        for(LevelEntity le : level.getTileList())
+        {
+            le.render(gameContainer,graphics, offsetX, offsetY);
+        }
+        for(LevelEntity le : level.getEnemyList())
+        {
+            le.render(gameContainer,graphics, offsetX, offsetY);
+        }
+        for(LevelEntity le : level.getShotList())
+        {
+            le.render(gameContainer,graphics, offsetX, offsetY);
+        }
+        level.getPlayer().render(gameContainer, graphics,offsetX, offsetY);
     }
 
     public int update(GameContainer gameContainer){

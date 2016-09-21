@@ -83,8 +83,11 @@ public class GameController{
         return false;
     }
     public void render(GameContainer gameContainer, Graphics graphics)  throws SlickException {
-        if (gameState == 0) {
+        if (gameState != 1) {
             menuController.render(gameContainer, graphics);
+        }
+        if (gameState == 1){
+            levelController.render(gameContainer, graphics);
         }
     }
 }
