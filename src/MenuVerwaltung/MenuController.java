@@ -16,10 +16,21 @@ public class MenuController {
         menu = new Menu("MenuBackground.png");
     }
 
-    public void update(GameContainer gameContainer){
+    public int update(GameContainer gameContainer){
         Input input= gameContainer.getInput();
         if (input.isKeyPressed(Input.KEY_ENTER)){
-            menu.enterPressed();
+            int option = menu.enterPressed();
+            if(option == 3)//EXIT GAME
+            {
+                gameContainer.exit();
+            }
+            if(option == 0){
+                return 1;
+            }
+            if(option == 2)//Fullscreen
+            {
+                return 2;
+            }
         } else if (input.isKeyPressed(Input.KEY_DOWN)){
             menu.downPressed();
         }else if (input.isKeyPressed(Input.KEY_UP)){
@@ -29,6 +40,7 @@ public class MenuController {
         }else if (input.isKeyPressed(Input.KEY_RIGHT)){
             menu.rightPressed();
         }
+        return 0;
     }
 
     public void render(GameContainer gameContainer, Graphics graphics){

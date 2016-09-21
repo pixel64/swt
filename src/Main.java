@@ -5,6 +5,8 @@ import org.newdawn.slick.geom.Rectangle;
 
 public class Main extends BasicGame {
 
+    private boolean fullScreen;
+    private static AppGameContainer app;
 
     public Main(String title) {
         super(title);
@@ -13,7 +15,7 @@ public class Main extends BasicGame {
     public static void main(String[] args) {
         try
         {
-            AppGameContainer app = new AppGameContainer(new Main("THMtertainment"));
+            app = new AppGameContainer(new Main("THMtertainment"));
             app.setDisplayMode(800, 600, false);
             app.setTargetFrameRate(60);
             app.setVSync(true);
@@ -27,12 +29,18 @@ public class Main extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
+        fullScreen = false;
     }
 
     @Override
     public void update(GameContainer gameContainer, int i) throws SlickException {
         GameController instance = GameController.getInstance();
-        instance.update(gameContainer);
+        boolean switchFullscreen = instance.update(gameContainer);
+        if(switchFullscreen){
+            fullScreen = !fullScreen;
+            app.setDisplayMode(800,600,fullScreen);
+        }
+
     }
 
     @Override

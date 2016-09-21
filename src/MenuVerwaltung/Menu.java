@@ -20,11 +20,12 @@ public class Menu {
     public Menu(String backgroundPath){
         settings = new Settings();
         menuEntities = new ArrayList<MenuEntity>();
-        title = new MenuEntity("title.png",100,50,600,100,1); //TODO an bilder anpassen
+        title = new MenuEntity("title.png",100,10,600,100,1); //TODO an bilder anpassen
         currentOption = 0; // 0 = spielen, 1 = Lautstärke, 2 = exit
-        menuEntities.add(new MenuEntity("spielen.png", 100, 180, 600, 100 ,2));
-        menuEntities.add(new MenuEntity("volume.png",100, 310, 600, 100, 12));
-        menuEntities.add(new MenuEntity("exit.png",100,440,600, 100, 2));
+        menuEntities.add(new MenuEntity("spielen.png", 100, 120, 600, 100 ,2));
+        menuEntities.add(new MenuEntity("volume.png",100, 240, 600, 100, 12));
+        menuEntities.add(new MenuEntity("fullscreen.png",100, 360, 600, 100, 2 ));
+        menuEntities.add(new MenuEntity("exit.png",100,480,600, 100, 2));
         menuEntities.get(0).setAnimationPhase(1);
         menuEntities.get(1).setAnimationPhase(settings.getVolume()/20);
         try {
@@ -64,7 +65,6 @@ public class Menu {
         me.setAnimationPhase(me.getAnimationPhase() - me.getMaxAnimPhase()/2); //ACHTUNG, die Menüelemente haben die gleichen dinge 2mal, einmal hinterlegt, einmal nicht hinterlegt.
         currentOption++;
         if (currentOption >= menuEntities.size()) {
-            System.out.println(currentOption +","+menuEntities.size());
             currentOption = 0;
         }
         me = menuEntities.get(currentOption);
