@@ -25,7 +25,13 @@ public final class LevelFactory {
         //Standardlevel für testzwecke
         l.setPlayerPos(300,300);
         l.addTile(new Tile("wall.png", 0, 560, 100, 40,1));
-
+        l.addTile(new Tile("wall.png", 100, 560, 100, 40,1));
+        l.addTile(new Tile("wall.png", 200, 560, 100, 40,1));
+        l.addTile(new Tile("wall.png", 300, 560, 100, 40,1));
+        l.addTile(new Tile("wall.png", 400, 560, 100, 40,1));
+        l.addTile(new Tile("wall.png", 500, 560, 100, 40,1));
+        l.addTile(new Tile("wall.png", 300, 460, 100, 40,1));
+        l.addTile(new Tile("wall.png", 100, 300, 40, 400,1));
         return l;
     }
 

@@ -17,12 +17,14 @@ public class Level {
     private ArrayList<Shot> shotList;
     private Player player;
     private Image backgroundImage;
+    private double gravitation;
 
     public Level(){
         tileList = new ArrayList<Tile>();
         enemyList = new ArrayList<Enemy>();
         shotList = new ArrayList<Shot>();
         player = new Player("player.png",0,0,50,100,1);//TODO an Bild anpassen
+        gravitation = 0.6;
     }
 
     public void setBackgroundImage(Image i){
@@ -68,4 +70,7 @@ public class Level {
 
     public Image getBackgroundImage(){return backgroundImage;}
 
+    public double getGravitation() {
+        return gravitation;
+    }
 }
