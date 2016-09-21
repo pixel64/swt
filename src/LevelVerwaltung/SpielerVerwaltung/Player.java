@@ -107,6 +107,6 @@ public class Player extends LevelEntity{
 
     public void addHealth(int health){
         this.health += health;
-        if(health >100) health = 100;
+        if(this.health >100) this.health = 100;
     }
 }

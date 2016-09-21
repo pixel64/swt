@@ -32,7 +32,7 @@ public final class LevelFactory {
         l.addTile(new Tile("wall.png", 500, 560, 100, 40,1));
         l.addTile(new Tile("wall.png", 300, 460, 100, 40,1));
         l.addTile(new Tile("wall.png", 100, 300, 40, 400,1));
-        l.addTile(new HealthPack("durstloescher.png", 500, 400,20,20, 2, 30));
+        l.addTile(new CoffeePack("durstloescher.png", 500, 400,20,20, 2, 70));
         l.getPlayer().setHealth(60);
         return l;
     }

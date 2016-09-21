@@ -50,12 +50,27 @@ public class LevelController {
         graphics.setColor(Color.green);
         graphics.fillRect(20,20,level.getPlayer().getHealth()*2,20);
 
+
+        //waffencd
+        //TODO bild der waffe anzeigen
         graphics.setColor(Color.white);
         graphics.fillRect(760,20,20,20);
         graphics.setColor(Color.black);
         graphics.drawRect(760,20,20,20);
         graphics.setColor(Color.gray);
         graphics.fillRect(761,(float)(40 - 20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),19,(float)(20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())));
+
+        //kaffeebar
+        //TODO kaffebild anzeigen
+        if(level.getPlayer().getCoffeeTicks() > 0) {
+            graphics.setColor(Color.gray);
+            graphics.fillRect(730, 20, 20, 20);
+            graphics.setColor(Color.black);
+            graphics.drawRect(730, 20, 20, 20);
+            graphics.setColor(new Color(127,51,0));
+            graphics.fillRect(731, (float) (40 - 20 * ((double) level.getPlayer().getCoffeeTicks() / 600)), 19, (float) (20 * ((double) level.getPlayer().getCoffeeTicks() / 600)));
+        }
+
 
 
 
