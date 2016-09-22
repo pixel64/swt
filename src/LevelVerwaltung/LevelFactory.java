@@ -88,7 +88,10 @@ public final class LevelFactory {
                 1, //TODO animatzionsphasen an gegner anpassen
                 Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
                 Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
-                createWeapon(e.getElementsByTagName("weapon").item(0)));
+                createWeapon(e.getElementsByTagName("weapon").item(0)),
+                Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent())
+        );
     }
 
     private static HealthPack createHealthPack(Element e){

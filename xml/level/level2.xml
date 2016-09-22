@@ -79,6 +79,8 @@
             <cooldown>80</cooldown>
             <gravity>false</gravity>
         </weapon>
+        <speedx>3</speedx>
+        <speedy>3</speedy>
     </entity>
     <entity type="healthpack">
         <path>durstloescher.png</path>

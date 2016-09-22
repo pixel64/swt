@@ -115,32 +115,33 @@ public class Tile extends LevelEntity {
         double distbot = Math.abs(e.getY() - getY() - getHeight());
 
         //Von Oben
-        if (disttop < distbot)
+        if (disttop <= distbot)
         {
             //Von Links
-            if (distleft < distright)
+            if (distleft <= distright)
             {
-                if (disttop < distleft  || disttop <= e.getSpeedY()+0.0001)// Abstand Oben < Abstand links
+                if (disttop <= distleft  || disttop <= e.getSpeedY()+0.0001)// Abstand Oben < Abstand links
                 {
                     //System.out.println("1");
                     e.setY(getY() - e.getHeight());
+                    e.setOnGround(true);
                     e.setSpeedY(0);
                 }
                 else
                 // Abstand links < Abstand Oben
                 {
                     //System.out.println("2");
-                    e.setSpeedX(0);
                     e.setX(getX() - e.getWidth());
                 }
             }
             else
             //Von Rechts
             {
-                if (disttop < distright || disttop <= e.getSpeedY()+0.0001)// Abstand Oben < Abstand rechts
+                if (disttop <= distright || disttop <= e.getSpeedY()+0.0001)// Abstand Oben < Abstand rechts
                 {
                     //System.out.println("3");
                     e.setY(getY() - e.getHeight());
+                    e.setOnGround(true);
                     e.setSpeedY(0);
 
                 }
@@ -148,7 +149,6 @@ public class Tile extends LevelEntity {
                 // Abstand rechts < Abstand Oben
                 {
                     //System.out.println("4");
-                    e.setSpeedX(0);
                     e.setX(getX() + getWidth());
                 }
 
@@ -160,18 +160,17 @@ public class Tile extends LevelEntity {
         {
             if (distleft < distright)//Von Links
             {
-                if (distbot < distleft  || disttop <= Math.abs(e.getSpeedY()+0.0001))// Abstand Unten < Abstand links
+                if (distbot < distleft || disttop <= Math.abs(e.getSpeedY()+0.0001))// Abstand Unten < Abstand links
                 {
                     //System.out.println("5");
                     e.setY(getY() + getHeight());
-                    e.setSpeedY(0);
+                    e.setSpeedY(1);
 
                 }
                 else
                 // Abstand links < Abstand Unten
                 {
                     //System.out.println("6");
-                    e.setSpeedX(0);
                     e.setX(getX() - e.getWidth());
 
                 }
@@ -179,17 +178,16 @@ public class Tile extends LevelEntity {
             else
             //Von Rechts
             {
-                if (distbot < distright || disttop <= Math.abs(e.getSpeedY()+0.0001))// Abstand Unten < Abstand rechts
+                if (distbot < distright  || disttop <= Math.abs(e.getSpeedY()+0.0001))// Abstand Unten < Abstand rechts
                 {
                     //System.out.println("7");
                     e.setY(getY() + getHeight());
-                    e.setSpeedY(0);
+                    e.setSpeedY(1);
                 }
                 else
                 // Abstand rechts < Abstand Unten
                 {
                     //System.out.println("8");
-                    e.setSpeedX(0);
                     e.setX(getX() + getWidth());
 
                 }

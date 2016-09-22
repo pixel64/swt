@@ -16,13 +16,25 @@ public class Enemy extends LevelEntity {
     private Weapon weapon;
     private double speedX;
     private double speedY;
-    public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, Weapon weapon) {
+    protected int currentPattern;
+    protected int currentPatternTicks;
+    protected int shotCDticks;
+    protected int jumpCDticks;
+    private boolean onGround;
+    public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, Weapon weapon, double speedX, double speedY) {
         super(path, x, y, width, height, maxAnimPhase);
         this.health = health;
         this.isBoss = isBoss;
         dead = false;
         isInvulnerable = false;
         this.weapon = weapon;
+        currentPattern=0;
+        currentPatternTicks = 0;
+        shotCDticks = weapon.getCooldownTicks();
+        this.speedX = speedX;
+        this.speedY = speedY;
+        onGround = false;
+        this.jumpCDticks = 0;
     }
 
 
@@ -66,6 +78,24 @@ public class Enemy extends LevelEntity {
     }
 
     public void update(Level l){
-        //TODO KI
+        setSpeedY(getSpeedY()+l.getGravitation());
+        this.jumpCDticks--;
+        this.shotCDticks--;
+        this.currentPatternTicks--;
+        if(jumpCDticks < 0) jumpCDticks=0;
+        if(shotCDticks < 0) shotCDticks=0;
+        if(currentPatternTicks<0) currentPatternTicks=0;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public boolean isOnGround() {
+        return onGround;
+    }
+
+    public void setOnGround(boolean onGround) {
+        this.onGround = onGround;
     }
 }
