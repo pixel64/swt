@@ -45,6 +45,7 @@ public final class LevelFactory {
     }
 
     private static void createLevelEntity(Element element,Level level){
+        //TODO mehr gegner/tilevarianten einfügen
         switch(element.getAttribute("type")){
             case "tile":
                 level.addTile(createTile(element));

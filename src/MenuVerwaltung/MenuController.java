@@ -1,5 +1,6 @@
 package MenuVerwaltung;
 
+import SpielVerwaltung.Settings;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
@@ -12,8 +13,8 @@ import java.util.ArrayList;
 public class MenuController {
 
     private Menu menu;
-    public MenuController(){
-        menu = new Menu("MenuBackground.png");
+    public MenuController(Settings s){
+        menu = new Menu("MenuBackground.png", s);
     }
 
     public int update(GameContainer gameContainer){

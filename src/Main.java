@@ -29,7 +29,9 @@ public class Main extends BasicGame {
 
     @Override
     public void init(GameContainer gameContainer) throws SlickException {
-        fullScreen = false;
+        GameController intance = GameController.getInstance();
+        fullScreen = intance.getSettings().isFullscreen();
+        app.setDisplayMode(800, 600, fullScreen);
     }
 
     @Override
@@ -38,6 +40,7 @@ public class Main extends BasicGame {
         boolean switchFullscreen = instance.update(gameContainer);
         if(switchFullscreen){
             fullScreen = !fullScreen;
+            instance.getSettings().setFullscreen(fullScreen);
             app.setDisplayMode(800,600,fullScreen);
         }
 

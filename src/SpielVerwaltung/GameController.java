@@ -15,6 +15,7 @@ public class GameController{
     private static GameController instance;
     private LevelController levelController;
     private MenuController menuController;
+    private Settings settings;
     private int gameState; // 0 = Hochgefahren, Menü startet, 1 = spielend, 2 = pausiert, 3 = game over, 4 = level clear, 5 = you win
     private int levelnumber;
     private static int maxLevelNumber = 3; //Anzahl aller level
@@ -26,7 +27,8 @@ public class GameController{
     }
     private GameController(){
         this.levelController = new LevelController();
-        this.menuController = new MenuController();
+        this.settings = new Settings();
+        this.menuController = new MenuController(settings);
         this.gameState = 0;
         this.levelnumber = 0;
     }
@@ -90,6 +92,10 @@ public class GameController{
         if (gameState == 1){
             levelController.render(gameContainer, graphics);
         }
+    }
+
+    public Settings getSettings() {
+        return settings;
     }
 }
 

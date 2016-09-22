@@ -17,8 +17,8 @@ public class Menu {
     private int currentOption;
     private Settings settings;
 
-    public Menu(String backgroundPath){
-        settings = new Settings();
+    public Menu(String backgroundPath, Settings s){
+        settings = s;
         menuEntities = new ArrayList<MenuEntity>();
         title = new MenuEntity("title.png",100,10,600,100,1); //TODO an bilder anpassen
         currentOption = 0; // 0 = spielen, 1 = Lautstärke, 2 = exit
