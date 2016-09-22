@@ -18,7 +18,7 @@ public class EnemyController {
                     return true;
                 deadEnemies.add(e);
             }else{
-                //TODO KI
+                e.update(l);
             }
 
         }

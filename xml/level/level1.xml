@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level backgroundimage = "level1background.png" playerposx="300" playerposy="300">
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>0</posx>
+        <posy>560</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>100</posx>
+        <posy>560</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>200</posx>
+        <posy>560</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>300</posx>
+        <posy>560</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>400</posx>
+        <posy>560</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>500</posx>
+        <posy>560</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>300</posx>
+        <posy>460</posy>
+        <width>100</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>100</posx>
+        <posy>300</posy>
+        <width>40</width>
+        <height>400</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="enemyA">
+        <path>testenemy.png</path>
+        <posx>150</posx>
+        <posy>450</posy>
+        <width>20</width>
+        <height>100</height>
+        <health>60</health>
+        <isboss>true</isboss>
+        <damage>10</damage>
+    </entity>
+    <entity type="healthpack">
+        <path>durstloescher.png</path>
+        <posx>500</posx>
+        <posy>400</posy>
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>30</heal>
+    </entity>
+    <entity type="coffeepack">
+        <path>coffee.png</path>
+        <posx>600</posx>
+        <posy>400</posy>
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>70</heal>
+    </entity>
+</level>

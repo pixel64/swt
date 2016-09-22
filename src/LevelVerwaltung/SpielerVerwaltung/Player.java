@@ -101,7 +101,7 @@ public class Player extends LevelEntity{
     public void takeDamage(int damage){
         if(invulnerabilityTicks <= 0) {
             health -= damage;
-            invulnerabilityTicks = 30;
+            invulnerabilityTicks = 50;
         }
     }
 

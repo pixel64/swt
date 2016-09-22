@@ -1,5 +1,6 @@
 package LevelVerwaltung.GegnerVerwaltung;
 
+import LevelVerwaltung.Level;
 import LevelVerwaltung.LevelEntity;
 import LevelVerwaltung.SpielerVerwaltung.Player;
 
@@ -61,5 +62,9 @@ public class Enemy extends LevelEntity {
 
     public void setSpeedY(double speedY) {
         this.speedY = speedY;
+    }
+
+    public void update(Level l){
+        //TODO KI
     }
 }

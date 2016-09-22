@@ -12,7 +12,7 @@ public class PlayerController {
     private static final double jumpPower = 14;
     private static final double climbSpeed = 6;
     private static final double walkSpeed = 7.5;
-    private static final double coffeeMultiplier = 1.5;
+    private static final double coffeeMultiplier = 2;
     public boolean update(GameContainer gameContainer, Level l){
         Player p = l.getPlayer();
         if(p.getHealth() <= 0) return true;

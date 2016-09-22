@@ -32,7 +32,7 @@ public class Tile extends LevelEntity {
                     //System.out.println("1");
                     p.setY(getY() - p.getHeight());
                     p.setOnGround(true);
-                    p.setSpeedY(0);
+                    p.setSpeedY(01);
                 }
                 else
                 // Abstand links < Abstand Oben
@@ -49,7 +49,7 @@ public class Tile extends LevelEntity {
                 {
                     //System.out.println("3");
                     p.setY(getY() - p.getHeight());
-                    p.setSpeedY(0);
+                    p.setSpeedY(01);
 
                 }
                 else
