@@ -2,6 +2,7 @@ package LevelVerwaltung;
 
 import LevelVerwaltung.GegnerVerwaltung.Enemy;
 import LevelVerwaltung.GegnerVerwaltung.EnemyA;
+import LevelVerwaltung.SchussVerwaltung.Weapon;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.util.xml.SlickXMLException;
@@ -87,8 +88,7 @@ public final class LevelFactory {
                 1, //TODO animatzionsphasen an gegner anpassen
                 Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
                 Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
-                Integer.parseInt(e.getElementsByTagName("damage").item(0).getTextContent())
-        );
+                createWeapon(e.getElementsByTagName("weapon").item(0)));
     }
 
     private static HealthPack createHealthPack(Element e){
@@ -112,5 +112,16 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("animphases").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("heal").item(0).getTextContent())
         );
+    }
+
+    private static Weapon createWeapon(Node n){
+        Element e = (Element) n;
+        return new Weapon(
+                e.getElementsByTagName("path").item(0).getTextContent(),
+                Integer.parseInt(e.getElementsByTagName("damage").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("speed").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("cooldown").item(0).getTextContent()),
+                Boolean.parseBoolean(e.getElementsByTagName("gravity").item(0).getTextContent())
+                );
     }
 }

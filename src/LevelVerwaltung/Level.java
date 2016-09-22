@@ -73,4 +73,8 @@ public class Level {
     public double getGravitation() {
         return gravitation;
     }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
 }

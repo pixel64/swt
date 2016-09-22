@@ -22,17 +22,17 @@ public class Tile extends LevelEntity {
         double distbot = Math.abs(p.getY() - getY() - getHeight());
 
         //Von Oben
-        if (disttop < distbot)
+        if (disttop <= distbot)
         {
             //Von Links
-            if (distleft < distright)
+            if (distleft <= distright)
             {
-                if (disttop < distleft  || disttop <= p.getSpeedY()+0.0001)// Abstand Oben < Abstand links
+                if (disttop <= distleft  || disttop <= p.getSpeedY()+0.0001)// Abstand Oben < Abstand links
                 {
                     //System.out.println("1");
                     p.setY(getY() - p.getHeight());
                     p.setOnGround(true);
-                    p.setSpeedY(01);
+                    p.setSpeedY(0);
                 }
                 else
                 // Abstand links < Abstand Oben
@@ -45,11 +45,12 @@ public class Tile extends LevelEntity {
             else
             //Von Rechts
             {
-                if (disttop < distright || disttop <= p.getSpeedY()+0.0001)// Abstand Oben < Abstand rechts
+                if (disttop <= distright || disttop <= p.getSpeedY()+0.0001)// Abstand Oben < Abstand rechts
                 {
                     //System.out.println("3");
                     p.setY(getY() - p.getHeight());
-                    p.setSpeedY(01);
+                    p.setOnGround(true);
+                    p.setSpeedY(0);
 
                 }
                 else
@@ -72,7 +73,7 @@ public class Tile extends LevelEntity {
                 {
                     //System.out.println("5");
                     p.setY(getY() + getHeight());
-                    p.setSpeedY(0);
+                    p.setSpeedY(1);
 
                 }
                 else
@@ -91,7 +92,7 @@ public class Tile extends LevelEntity {
                 {
                     //System.out.println("7");
                     p.setY(getY() + getHeight());
-                    p.setSpeedY(0);
+                    p.setSpeedY(1);
                 }
                 else
                 // Abstand rechts < Abstand Unten

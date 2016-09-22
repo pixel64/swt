@@ -150,4 +150,15 @@ public class LevelController {
     public void loadLevel(String path){
         level = LevelFactory.loadLevel(path);
     }
+
+    public void loadLevel(String path, Player player) {
+        level = LevelFactory.loadLevel(path);
+        player.setX(level.getPlayer().getX());
+        player.setY(level.getPlayer().getY());
+        level.setPlayer(player);
+    }
+
+    public Level getLevel() {
+        return level;
+    }
 }

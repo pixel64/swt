@@ -39,7 +39,7 @@ public class Shot extends LevelEntity {
     public void update(GameContainer gameContainer, Level l){
         setX(getX()+speedX);
         if(influencedByGravity){
-            speedY += l.getGravitation();
+            speedY += l.getGravitation()*3;
         }
         setY(getY()+speedY);
     }

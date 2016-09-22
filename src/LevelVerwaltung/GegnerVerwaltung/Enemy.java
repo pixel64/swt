@@ -2,6 +2,7 @@ package LevelVerwaltung.GegnerVerwaltung;
 
 import LevelVerwaltung.Level;
 import LevelVerwaltung.LevelEntity;
+import LevelVerwaltung.SchussVerwaltung.Weapon;
 import LevelVerwaltung.SpielerVerwaltung.Player;
 
 /**
@@ -12,16 +13,16 @@ public class Enemy extends LevelEntity {
     private boolean isInvulnerable;
     private boolean dead;
     private boolean isBoss;
-    private int damage;
+    private Weapon weapon;
     private double speedX;
     private double speedY;
-    public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, int damage) {
+    public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, Weapon weapon) {
         super(path, x, y, width, height, maxAnimPhase);
         this.health = health;
         this.isBoss = isBoss;
         dead = false;
         isInvulnerable = false;
-        this.damage = damage;
+        this.weapon = weapon;
     }
 
 
@@ -45,7 +46,7 @@ public class Enemy extends LevelEntity {
     }
 
     public void onCollision(Player p){
-        p.takeDamage(damage);
+        p.takeDamage(weapon.getDamage());
     }
 
     public double getSpeedX() {

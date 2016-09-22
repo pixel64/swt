@@ -55,13 +55,13 @@ public class PlayerController {
             if (input.isKeyDown(Input.KEY_LEFT)) {
                 l.addShot(new Shot(
                     p.getWeapon().getProjectileImagePath(),
-                        p.getX()-24, p.getY() + p.getHeight() *2/3, 20, 5, 1, -p.getWeapon().getSpeed(), 0,p.getWeapon().isGravity(), p.getWeapon().getDamage()
+                        p.getX()-24, p.getY() + p.getHeight() *1/3, 20, 5, 1, -p.getWeapon().getSpeed(), (p.getWeapon().isGravity()? -5:0),p.getWeapon().isGravity(), p.getWeapon().getDamage()
                 ));
                 p.setWeaponCooldownTicks(p.getWeapon().getCooldownTicks());
             } else if (input.isKeyDown(Input.KEY_RIGHT)) {
                 l.addShot(new Shot(
                         p.getWeapon().getProjectileImagePath(),
-                        p.getX()+ p.getWidth() + 4, p.getY() + p.getHeight() *2/3, 20, 5, 1, p.getWeapon().getSpeed(), 0,p.getWeapon().isGravity(), p.getWeapon().getDamage()
+                        p.getX()+ p.getWidth() + 4, p.getY() + p.getHeight() *1/3, 20, 5, 1, p.getWeapon().getSpeed(), (p.getWeapon().isGravity()? -5:0),p.getWeapon().isGravity(), p.getWeapon().getDamage()
                 ));
                 p.setWeaponCooldownTicks(p.getWeapon().getCooldownTicks());
             } else if (input.isKeyDown(Input.KEY_UP)) {

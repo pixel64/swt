@@ -1,6 +1,7 @@
 package SpielVerwaltung;
 
 import LevelVerwaltung.LevelController;
+import LevelVerwaltung.SpielerVerwaltung.Player;
 import MenuVerwaltung.MenuController;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -16,6 +17,7 @@ public class GameController{
     private LevelController levelController;
     private MenuController menuController;
     private Settings settings;
+    private Player player;
     private int gameState; // 0 = Hochgefahren, Menü startet, 1 = spielend, 2 = pausiert, 3 = game over, 4 = level clear, 5 = you win
     private int levelnumber;
     private static int maxLevelNumber = 3; //Anzahl aller level
@@ -31,6 +33,7 @@ public class GameController{
         this.menuController = new MenuController(settings);
         this.gameState = 0;
         this.levelnumber = 0;
+        this.player = new Player("player.png",0,0,50,100,1);//TODO an spieler anpassen
     }
     public boolean update(GameContainer gameContainer){
         if (gameState == 0) {//TODO add Menu states
@@ -39,6 +42,7 @@ public class GameController{
             if(start == 1){
                 gameState = 1;
                 levelController.loadLevel("level1.xml");
+                this.player= levelController.getLevel().getPlayer();
                 levelnumber = 1;
             }else if (start == 2) {
                 return true;
@@ -59,7 +63,7 @@ public class GameController{
                     gameState = 5;
                     menuController.getTitleEntity().setAnimationPhase(exit+2);
                 }else {
-                    levelController.loadLevel("level" + levelnumber + ".xml");
+                    levelController.loadLevel("level" + levelnumber + ".xml", player);
                 }
             }
         }
@@ -78,6 +82,7 @@ public class GameController{
             if(start == 1){ //Spiel starten
                 gameState = 1;
                 levelController.loadLevel("level1.xml");
+                this.player= levelController.getLevel().getPlayer();
                 levelnumber = 1;
             }else if (start == 2) { //Fullscreen
                 return true;

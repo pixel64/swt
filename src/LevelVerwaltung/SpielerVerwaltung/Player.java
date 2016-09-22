@@ -22,7 +22,7 @@ public class Player extends LevelEntity{
         coffeeTicks = 0;
         invulnerabilityTicks = 30;
         health = 100;
-        weapon = new Weapon("kugelschreiber.png", 20, 20, 30, false);
+        weapon = new Weapon("kugelschreiber.png", 20, 20, 30, true);
         weaponCooldownTicks = 0;
     }
 
