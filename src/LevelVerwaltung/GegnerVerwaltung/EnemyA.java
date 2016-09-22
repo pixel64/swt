@@ -25,8 +25,20 @@ public class EnemyA extends Enemy {
             currentPatternTicks = 140;
         }else{
             switch(currentPattern){
-                case 1:
-                    if (l.getPlayer().getX() < getX()){
+                case 0://Vom Gegner weglaufen und Springen
+                    if (l.getPlayer().getX() < getX()-1){
+                        setX(getX()+getSpeedX());
+                    }else if(l.getPlayer().getX() > getX()+1){
+                        setX(getX()-getSpeedX());
+                    }
+                    System.out.println(isOnGround()+","+jumpCDticks);
+                    if(isOnGround() && jumpCDticks <= 0) {
+                        setSpeedY(-jumpPower);
+                        jumpCDticks = 75;
+                    }
+                    break;
+                case 1://Zum gegner Laufen und Schießen
+                    if (l.getPlayer().getX() < getX()-1){ //Verhinder stottern auf dem Spieler genau
                         setX(getX() - getSpeedX());
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
@@ -35,7 +47,7 @@ public class EnemyA extends Enemy {
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
-                    }else{
+                    }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX() + getSpeedX());
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
@@ -47,17 +59,16 @@ public class EnemyA extends Enemy {
                     }
 
                     break;
-                case 2:
-                    if(l.getPlayer().getX() < getX()) {
+                case 2://Vom Gegner Weglaufen
+                    if (l.getPlayer().getX() < getX()-1){
                         setX(getX()+getSpeedX());
-                    }
-                    else{
+                    }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX()-getSpeedX());
                     }
 
                     break;
-                case 3:
-                    if (l.getPlayer().getX() < getX()){
+                case 3://Zum Gegner laufen, springen und schießen.
+                    if (l.getPlayer().getX() < getX()-1){
                         setX(getX() - getSpeedX());
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
@@ -66,7 +77,7 @@ public class EnemyA extends Enemy {
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
-                    }else{
+                    }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX() + getSpeedX());
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
@@ -80,23 +91,6 @@ public class EnemyA extends Enemy {
                         setSpeedY(-jumpPower);
                         jumpCDticks = 75;
                     }
-
-
-                    break;
-                case 0:
-                    if(l.getPlayer().getX() < getX()) {
-                        setX(getX()+getSpeedX());
-                    }
-                    else{
-                        setX(getX()-getSpeedX());
-                    }
-                    System.out.println(isOnGround()+","+jumpCDticks);
-                    if(isOnGround() && jumpCDticks <= 0){
-                        setSpeedY(-jumpPower);
-                        jumpCDticks=75;
-                    }
-
-
                     break;
                 default: break;
             }

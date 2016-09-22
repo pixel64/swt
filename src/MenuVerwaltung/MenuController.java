@@ -12,35 +12,45 @@ import java.util.ArrayList;
  */
 public class MenuController {
 
+    private int menuCDticks;
     private Menu menu;
     public MenuController(Settings s){
         menu = new Menu("MenuBackground.png", s);
     }
 
     public int update(GameContainer gameContainer){
-        Input input= gameContainer.getInput();
-        if (input.isKeyPressed(Input.KEY_ENTER)){
-            int option = menu.enterPressed();
-            if(option == 3)//EXIT GAME
-            {
-                gameContainer.exit();
+        if(menuCDticks<= 0){
+            Input input= gameContainer.getInput();
+            if (input.isKeyDown(Input.KEY_ENTER)){
+                menuCDticks = 10;
+                int option = menu.enterPressed();
+                if(option == 3)//EXIT GAME
+                {
+                    gameContainer.exit();
+                }
+                if(option == 0){
+                    return 1;
+                }
+                if(option == 2)//Fullscreen
+                {
+                    return 2;
+                }
+            } else if (input.isKeyDown(Input.KEY_DOWN)){
+                menuCDticks = 10;
+                menu.downPressed();
+            }else if (input.isKeyDown(Input.KEY_UP)){
+                menuCDticks = 10;
+                menu.upPressed();
+            }else if (input.isKeyDown(Input.KEY_LEFT)){
+                menuCDticks = 10;
+                menu.leftPressed();
+            }else if (input.isKeyDown(Input.KEY_RIGHT)){
+                menuCDticks = 10;
+                menu.rightPressed();
             }
-            if(option == 0){
-                return 1;
-            }
-            if(option == 2)//Fullscreen
-            {
-                return 2;
-            }
-        } else if (input.isKeyPressed(Input.KEY_DOWN)){
-            menu.downPressed();
-        }else if (input.isKeyPressed(Input.KEY_UP)){
-            menu.upPressed();
-        }else if (input.isKeyPressed(Input.KEY_LEFT)){
-            menu.leftPressed();
-        }else if (input.isKeyPressed(Input.KEY_RIGHT)){
-            menu.rightPressed();
         }
+        menuCDticks--;
+        if(menuCDticks<=0)menuCDticks=0;
         return 0;
     }
 
@@ -55,4 +65,7 @@ public class MenuController {
     }
 
     public MenuEntity getTitleEntity(){return menu.getTitleEntity();}
+    public void menuCD(){
+        menuCDticks=10;
+    }
 }

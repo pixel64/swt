@@ -36,7 +36,7 @@ public class GameController{
         this.player = new Player("player.png",0,0,50,100,1);//TODO an spieler anpassen
     }
     public boolean update(GameContainer gameContainer){
-        if (gameState == 0) {//TODO add Menu states
+        if (gameState == 0) {
             menuController.getTitleEntity().setAnimationPhase(0); //titlephase 0 = Welcome
             int start = menuController.update(gameContainer);
             if(start == 1){
@@ -49,7 +49,8 @@ public class GameController{
             }
         }
 
-        if (gameState == 1){
+        else if (gameState == 1){
+            menuController.menuCD();
             int exit = levelController.update(gameContainer); // 0 für spielt weiter, 1 für oause, 2 für game over, 3 level clear
             menuController.getTitleEntity().setAnimationPhase(exit+1);
             if(exit == 1){
@@ -68,7 +69,7 @@ public class GameController{
             }
         }
 
-        if (gameState == 2 || gameState ==4){ //Pausiert oder level clear
+        else if (gameState == 2 || gameState ==4){ //Pausiert oder level clear
             int start = menuController.update(gameContainer);
             if (start ==1){
                 gameState =1;
@@ -77,7 +78,7 @@ public class GameController{
             }
         }
 
-        if (gameState == 3 || gameState == 5){ //Game over oder You win
+        else if (gameState == 3 || gameState == 5){ //Game over oder You win
             int start = menuController.update(gameContainer);
             if(start == 1){ //Spiel starten
                 gameState = 1;
