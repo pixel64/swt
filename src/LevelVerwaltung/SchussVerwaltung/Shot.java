@@ -53,7 +53,7 @@ public class Shot extends LevelEntity {
 
         }
         else if (speedX < 0){//Projektil fliegt nach links
-            renderedImage = renderedImage.getFlippedCopy(false,true);
+            renderedImage = renderedImage.getFlippedCopy(true, false);
         }else if (speedY < 0){//Projektil fliegt nach oben
             renderedImage.rotate(90);
         }else{//Projektil fliegt nach unten
