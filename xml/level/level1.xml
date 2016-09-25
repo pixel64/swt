@@ -603,7 +603,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <weapon>
-            <path>edding_projectile.png</path>
+            <path>eddingprojectile.png</path>
             <damage>30</damage>
             <speed>15</speed>
             <cooldown>30</cooldown>

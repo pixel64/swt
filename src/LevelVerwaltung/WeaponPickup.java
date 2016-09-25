@@ -28,5 +28,6 @@ public class WeaponPickup extends Tile {
     @Override
     public void onCollision(Player p) {
         p.setWeapon(weapon);
+        dead = true;
     }
 }
