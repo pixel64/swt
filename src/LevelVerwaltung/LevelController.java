@@ -29,6 +29,9 @@ public class LevelController {
     public void render(GameContainer gameContainer, Graphics graphics){
         double offsetX = (level.getPlayer().getX()+ level.getPlayer().getWidth()/2) -400;
         double offsetY = (level.getPlayer().getY()+level.getPlayer().getHeight()/2) -300;
+        if(offsetY < 0){
+            offsetY = 0;
+        }
         graphics.drawImage(level.getBackgroundImage(),(float)-offsetX,(float)-offsetY);
         for(LevelEntity le : level.getTileList())
         {
