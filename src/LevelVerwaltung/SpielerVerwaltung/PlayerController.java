@@ -11,8 +11,8 @@ import org.newdawn.slick.Input;
 public class PlayerController {
     private static final double jumpPower = 12;
     private static final double climbSpeed = 6;
-    private static final double walkSpeed = 6;
-    private static final double coffeeMultiplier = 2;
+    private static final double walkSpeed = 5;
+    private static final double coffeeMultiplier = 1.8;
     public boolean update(GameContainer gameContainer, Level l){
         Player p = l.getPlayer();
         if(p.getHealth() <= 0) return true;

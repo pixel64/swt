@@ -85,6 +85,8 @@ public class Enemy extends LevelEntity {
         if(jumpCDticks < 0) jumpCDticks=0;
         if(shotCDticks < 0) shotCDticks=0;
         if(currentPatternTicks<0) currentPatternTicks=0;
+        setOnGround(false);
+        setY(getY()+getSpeedY());
     }
 
     public Weapon getWeapon() {

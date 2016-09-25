@@ -65,11 +65,11 @@
         <animphases>1</animphases>
     </entity>
     <entity type="enemyB">
-        <path>testenemy.png</path>
+        <path>player.png</path>
         <posx>150</posx>
         <posy>450</posy>
-        <width>20</width>
-        <height>100</height>
+        <width>32</width>
+        <height>68</height>
         <health>60</health>
         <isboss>true</isboss>
         <weapon>

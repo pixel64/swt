@@ -9,10 +9,12 @@ import LevelVerwaltung.SchussVerwaltung.Weapon;
  */
 public class EnemyA extends Enemy {
 
+    private boolean walkingright;
     private static double jumpPower;
     public EnemyA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY) {
         super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY);
         jumpPower= 10;
+        walkingright = true;
     }
 
     @Override
@@ -27,8 +29,10 @@ public class EnemyA extends Enemy {
                 case 0://Vom Gegner weglaufen und Springen
                     if (l.getPlayer().getX() < getX()-1){
                         setX(getX()+getSpeedX());
+                        walkingright = true;
                     }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX()-getSpeedX());
+                        walkingright = false;
                     }
                     System.out.println(isOnGround()+","+jumpCDticks);
                     if(isOnGround() && jumpCDticks <= 0) {
@@ -39,6 +43,7 @@ public class EnemyA extends Enemy {
                 case 1://Zum gegner Laufen und Schießen
                     if (l.getPlayer().getX() < getX()-1){ //Verhinder stottern auf dem Spieler genau
                         setX(getX() - getSpeedX());
+                        walkingright = false;
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
@@ -48,6 +53,7 @@ public class EnemyA extends Enemy {
                         }
                     }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX() + getSpeedX());
+                        walkingright = true;
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
@@ -61,14 +67,17 @@ public class EnemyA extends Enemy {
                 case 2://Vom Gegner Weglaufen
                     if (l.getPlayer().getX() < getX()-1){
                         setX(getX()+getSpeedX());
+                        walkingright = true;
                     }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX()-getSpeedX());
+                        walkingright = false;
                     }
 
                     break;
                 case 3://Zum Gegner laufen, springen und schießen.
                     if (l.getPlayer().getX() < getX()-1){
                         setX(getX() - getSpeedX());
+                        walkingright = false;
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
@@ -78,6 +87,7 @@ public class EnemyA extends Enemy {
                         }
                     }else if(l.getPlayer().getX() > getX()+1){
                         setX(getX() + getSpeedX());
+                        walkingright = true;
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
@@ -94,7 +104,14 @@ public class EnemyA extends Enemy {
                 default: break;
             }
         }
-        setOnGround(false);
-        setY(getY()+getSpeedY());
+        if(!walkingright) {
+            setAnimationPhase(getAnimationPhase() - 0.4);
+            if (getAnimationPhase() < 8) setAnimationPhase(15.9);
+        }else
+        {
+            setAnimationPhase(getAnimationPhase()+0.4);
+            if(getAnimationPhase() >= 8) setAnimationPhase(0);
+        }
+    super.update(l);
     }
 }

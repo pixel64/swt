@@ -9,22 +9,25 @@ import LevelVerwaltung.SchussVerwaltung.Weapon;
  */
 public class EnemyB extends Enemy {
     private int movingticks;
+    private boolean walkingright;
 
     public EnemyB(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY, int movingticks) {
         super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY);
         this.movingticks = movingticks;
+        walkingright =false;
     }
 
     @Override
     public void update(Level l) {
-        super.update(l);
+
         if(currentPatternTicks <= 0) {
             currentPattern = (currentPattern+1) %2;
             currentPatternTicks = movingticks;
         }
         switch(currentPattern){
-            case 0://Vom Gegner weglaufen und Springen
+            case 0:
                 setX(getX() - getSpeedX());
+                walkingright = false;
                 if(l.getPlayer().getX()+getWidth() < getX() && shotCDticks <= 0)
                 {
                     l.addShot(new Shot(
@@ -34,8 +37,9 @@ public class EnemyB extends Enemy {
                     shotCDticks = getWeapon().getCooldownTicks();
                 }
                 break;
-            case 1://Zum gegner Laufen und Schießen
+            case 1:
                 setX(getX() + getSpeedX());
+                walkingright = true;
                 if(l.getPlayer().getX()> getX()+getWidth() && shotCDticks <= 0)
                 {
                     l.addShot(new Shot(
@@ -49,6 +53,14 @@ public class EnemyB extends Enemy {
 
             default: break;
         }
-
+        if(!walkingright) {
+            setAnimationPhase(getAnimationPhase() - 0.4);
+            if (getAnimationPhase() < 8) setAnimationPhase(15.9);
+        }else
+        {
+            setAnimationPhase(getAnimationPhase()+0.4);
+            if(getAnimationPhase() >= 8) setAnimationPhase(0);
+        }
+        super.update(l);
     }
 }
