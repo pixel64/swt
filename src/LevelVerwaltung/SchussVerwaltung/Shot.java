@@ -34,6 +34,7 @@ public class Shot extends LevelEntity {
 
     public void onCollision(Player p){
         p.takeDamage(damage);
+        dead = true;
     }
 
     public void update(GameContainer gameContainer, Level l){
@@ -42,6 +43,7 @@ public class Shot extends LevelEntity {
             speedY += l.getGravitation()*3;
         }
         setY(getY()+speedY);
+
     }
 
     @Override

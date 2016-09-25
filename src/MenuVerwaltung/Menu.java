@@ -20,7 +20,7 @@ public class Menu {
     public Menu(String backgroundPath, Settings s){
         settings = s;
         menuEntities = new ArrayList<MenuEntity>();
-        title = new MenuEntity("title.png",100,10,600,100,1); //TODO an bilder anpassen
+        title = new MenuEntity("title.png",100,10,600,100,1);
         currentOption = 0; // 0 = spielen, 1 = Lautstärke, 2 = exit
         menuEntities.add(new MenuEntity("spielen.png", 100, 120, 600, 100 ,2));
         menuEntities.add(new MenuEntity("volume.png",100, 240, 600, 100, 12));

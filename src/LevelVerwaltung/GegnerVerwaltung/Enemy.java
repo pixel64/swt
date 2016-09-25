@@ -21,6 +21,7 @@ public class Enemy extends LevelEntity {
     protected int shotCDticks;
     protected int jumpCDticks;
     private boolean onGround;
+    private boolean flying;
     public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, Weapon weapon, double speedX, double speedY) {
         super(path, x, y, width, height, maxAnimPhase);
         this.health = health;
@@ -35,6 +36,7 @@ public class Enemy extends LevelEntity {
         this.speedY = speedY;
         onGround = false;
         this.jumpCDticks = 0;
+        flying = false;
     }
 
 
@@ -78,7 +80,7 @@ public class Enemy extends LevelEntity {
     }
 
     public void update(Level l){
-        setSpeedY(getSpeedY()+l.getGravitation());
+        if(!flying) setSpeedY(getSpeedY()+l.getGravitation());
         this.jumpCDticks--;
         this.shotCDticks--;
         this.currentPatternTicks--;
@@ -99,5 +101,9 @@ public class Enemy extends LevelEntity {
 
     public void setOnGround(boolean onGround) {
         this.onGround = onGround;
+    }
+
+    public void setFlying(boolean flying) {
+        this.flying = flying;
     }
 }

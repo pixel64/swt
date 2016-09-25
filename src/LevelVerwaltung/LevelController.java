@@ -52,7 +52,6 @@ public class LevelController {
 
 
         //waffencd
-        //TODO bild der waffe anzeigen
         graphics.setColor(Color.white);
         graphics.fillRect(760,20,20,20);
         graphics.setColor(Color.black);
@@ -61,7 +60,6 @@ public class LevelController {
         graphics.fillRect(761,(float)(40 - 20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),19,(float)(20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())));
 
         //kaffeebar
-        //TODO kaffebild anzeigen
         if(level.getPlayer().getCoffeeTicks() > 0) {
             graphics.setColor(Color.gray);
             graphics.fillRect(730, 20, 20, 20);
@@ -92,13 +90,13 @@ public class LevelController {
         if (gameContainer.getInput().isKeyDown(Input.KEY_ESCAPE)){//Pausiert
             return 1;
         }
-        if(enemyController.update(gameContainer, level) == true){ //Level Clear, gegner mit isBoss ist gestorben
+        if(enemyController.update(gameContainer, level)){ //Level Clear, gegner mit isBoss ist gestorben
             return 3;
         }
 
         shotController.update(gameContainer, level);
 
-        if(playerController.update(gameContainer, level) == true){ //Player ist gestorben
+        if(playerController.update(gameContainer, level)){ //Player ist gestorben
             return 2;
         }
 
