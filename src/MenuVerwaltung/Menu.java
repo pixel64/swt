@@ -20,12 +20,12 @@ public class Menu {
     public Menu(String backgroundPath, Settings s){
         settings = s;
         menuEntities = new ArrayList<MenuEntity>();
-        title = new MenuEntity("title.png",100,10,600,100,1);
+        title = new MenuEntity("title.png",100,120,600,80,1);
         currentOption = 0; // 0 = spielen, 1 = Lautstärke, 2 = exit
-        menuEntities.add(new MenuEntity("spielen.png", 100, 120, 600, 100 ,2));
-        menuEntities.add(new MenuEntity("volume.png",100, 240, 600, 100, 12));
-        menuEntities.add(new MenuEntity("fullscreen.png",100, 360, 600, 100, 2 ));
-        menuEntities.add(new MenuEntity("exit.png",100,480,600, 100, 2));
+        menuEntities.add(new MenuEntity("spielen.png", 100, 210, 600, 80 ,2));
+        menuEntities.add(new MenuEntity("volume.png",100, 300, 600, 80, 12));
+        menuEntities.add(new MenuEntity("fullscreen.png",100, 390, 600, 80, 2 ));
+        menuEntities.add(new MenuEntity("exit.png",100,480,600, 80, 2));
         menuEntities.get(0).setAnimationPhase(1);
         menuEntities.get(1).setAnimationPhase(settings.getVolume()/20);
         try {

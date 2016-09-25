@@ -47,7 +47,7 @@ public class EnemyA extends Enemy {
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage()
+                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -57,7 +57,7 @@ public class EnemyA extends Enemy {
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage()
+                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -81,7 +81,7 @@ public class EnemyA extends Enemy {
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage()
+                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -91,7 +91,7 @@ public class EnemyA extends Enemy {
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage()
+                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
