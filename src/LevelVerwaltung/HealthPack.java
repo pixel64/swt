@@ -16,7 +16,7 @@ public class HealthPack extends Tile {
 
     @Override
     public void onCollision(Player p) {
-        System.out.println(healing);
+       // System.out.println(healing);
         p.addHealth(healing);
         dead = true;
     }

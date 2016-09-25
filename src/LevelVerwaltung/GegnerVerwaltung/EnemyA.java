@@ -19,10 +19,9 @@ public class EnemyA extends Enemy {
 
     @Override
     public void update(Level l) {
-        super.update(l);
         if(currentPatternTicks <= 0){
             currentPattern = (int)(Math.random() * 4);
-            System.out.println("AI-Pattern:"+currentPattern);
+           // System.out.println("AI-Pattern:"+currentPattern);
             currentPatternTicks = 140;
         }else{
             switch(currentPattern){
@@ -34,7 +33,7 @@ public class EnemyA extends Enemy {
                         setX(getX()-getSpeedX());
                         walkingright = false;
                     }
-                    System.out.println(isOnGround()+","+jumpCDticks);
+                    //System.out.println(isOnGround()+","+jumpCDticks);
                     if(isOnGround() && jumpCDticks <= 0) {
                         setSpeedY(-jumpPower);
                         jumpCDticks = 75;
@@ -112,6 +111,7 @@ public class EnemyA extends Enemy {
             setAnimationPhase(getAnimationPhase()+0.4);
             if(getAnimationPhase() >= 8) setAnimationPhase(0);
         }
-    super.update(l);
+        super.update(l);
+
     }
 }

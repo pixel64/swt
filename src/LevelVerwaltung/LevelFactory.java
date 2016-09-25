@@ -1,13 +1,11 @@
 package LevelVerwaltung;
 
-import LevelVerwaltung.GegnerVerwaltung.Enemy;
+
 import LevelVerwaltung.GegnerVerwaltung.EnemyA;
 import LevelVerwaltung.GegnerVerwaltung.EnemyB;
 import LevelVerwaltung.GegnerVerwaltung.EnemyC;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.util.xml.SlickXMLException;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
@@ -69,6 +67,9 @@ public final class LevelFactory {
                 break;
             case "fire":
                 level.addTile(createFire(element));
+                break;
+            case "weapon":
+                level.addTile(createWeaponPickup(element));
                 break;
             default:
                 System.out.println("Falscher type der entity in xml datei");
@@ -179,6 +180,18 @@ public final class LevelFactory {
                 createWeapon(e.getElementsByTagName("weapon").item(0)),
                 Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
                 Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent())
+        );
+    }
+
+    private static WeaponPickup createWeaponPickup(Element e){
+        return new WeaponPickup(
+                e.getElementsByTagName("path").item(0).getTextContent(),
+                Double.parseDouble(e.getElementsByTagName("posx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("posy").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("animphases").item(0).getTextContent()),
+                createWeapon(e.getElementsByTagName("weapon").item(0))
         );
     }
 

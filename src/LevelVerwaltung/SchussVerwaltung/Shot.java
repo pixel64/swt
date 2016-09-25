@@ -30,7 +30,7 @@ public class Shot extends LevelEntity {
 
     public void onCollision(Enemy e){
         if(ownerisplayer){
-        System.out.println("hit enemy");
+        //System.out.println("hit enemy");
         e.takeDamage(damage);
         dead = true;
         }
