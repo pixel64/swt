@@ -64,7 +64,7 @@
         <height>400</height>
         <animphases>1</animphases>
     </entity>
-    <entity type="enemyA">
+    <entity type="enemyB">
         <path>testenemy.png</path>
         <posx>150</posx>
         <posy>450</posy>
@@ -75,12 +75,13 @@
         <weapon>
             <path>Kugelschreiber.png</path>
             <damage>10</damage>
-            <speed>10</speed>
+            <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
         </weapon>
         <speedx>3</speedx>
         <speedy>3</speedy>
+        <moveduration>60</moveduration>
     </entity>
     <entity type="healthpack">
         <path>durstloescher.png</path>

@@ -17,7 +17,6 @@ public class EnemyA extends Enemy {
 
     @Override
     public void update(Level l) {
-        //TODO override KI
         super.update(l);
         if(currentPatternTicks <= 0){
             currentPattern = (int)(Math.random() * 4);

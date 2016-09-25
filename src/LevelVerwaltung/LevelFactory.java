@@ -2,6 +2,7 @@ package LevelVerwaltung;
 
 import LevelVerwaltung.GegnerVerwaltung.Enemy;
 import LevelVerwaltung.GegnerVerwaltung.EnemyA;
+import LevelVerwaltung.GegnerVerwaltung.EnemyB;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
@@ -53,6 +54,9 @@ public final class LevelFactory {
                 break;
             case "enemyA":
                 level.addEnemy(createEnemyA(element));
+                break;
+            case "enemyB":
+                level.addEnemy(createEnemyB(element));
                 break;
             case "healthpack":
                 level.addTile(createHealthPack(element));
@@ -126,5 +130,22 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("cooldown").item(0).getTextContent()),
                 Boolean.parseBoolean(e.getElementsByTagName("gravity").item(0).getTextContent())
                 );
+    }
+
+    private static EnemyB createEnemyB(Element e){
+        return new EnemyB(
+                e.getElementsByTagName("path").item(0).getTextContent(),
+                Double.parseDouble(e.getElementsByTagName("posx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("posy").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
+                1, //TODO animatzionsphasen an gegner anpassen
+                Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
+                Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
+                createWeapon(e.getElementsByTagName("weapon").item(0)),
+                Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("moveduration").item(0).getTextContent())
+        );
     }
 }

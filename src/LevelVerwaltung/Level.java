@@ -23,7 +23,7 @@ public class Level {
         tileList = new ArrayList<Tile>();
         enemyList = new ArrayList<Enemy>();
         shotList = new ArrayList<Shot>();
-        player = new Player("player.png",0,0,50,100,1);//TODO an Bild anpassen
+        player = new Player("player.png",0,0,32,68,16);
         gravitation = 0.6;
     }
 

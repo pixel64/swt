@@ -9,15 +9,15 @@ import org.newdawn.slick.Input;
  * Created by Kenanja on 21.09.2016.
  */
 public class PlayerController {
-    private static final double jumpPower = 14;
+    private static final double jumpPower = 12;
     private static final double climbSpeed = 6;
-    private static final double walkSpeed = 7.5;
+    private static final double walkSpeed = 6;
     private static final double coffeeMultiplier = 2;
     public boolean update(GameContainer gameContainer, Level l){
         Player p = l.getPlayer();
         if(p.getHealth() <= 0) return true;
         Input input = gameContainer.getInput();
-        p.setSpeedY(p.getSpeedY()+l.getGravitation()); //TODO set animation phases after the inputs
+        p.setSpeedY(p.getSpeedY()+l.getGravitation());
         if(input.isKeyDown(Input.KEY_SPACE)){
             if(p.isOnGround()){
                 p.setSpeedY(-jumpPower);
@@ -42,9 +42,13 @@ public class PlayerController {
         p.setSpeedX(0);
         if(input.isKeyDown(Input.KEY_A)){
             p.setSpeedX(-walkSpeed);
+            p.setAnimationPhase(p.getAnimationPhase()-0.4);
+            if(p.getAnimationPhase() < 8)p.setAnimationPhase(15.9);
 
         }else if(input.isKeyDown(Input.KEY_D)){
             p.setSpeedX(walkSpeed);
+            p.setAnimationPhase(p.getAnimationPhase()+0.4);
+            if(p.getAnimationPhase() >= 8)p.setAnimationPhase(0);
         }
         if(p.getCoffeeTicks() > 0){
             p.setSpeedX(p.getSpeedX()*coffeeMultiplier);

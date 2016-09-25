@@ -33,7 +33,7 @@ public class GameController{
         this.menuController = new MenuController(settings);
         this.gameState = 0;
         this.levelnumber = 0;
-        this.player = new Player("player.png",0,0,50,100,1);//TODO an spieler anpassen
+        this.player = new Player("player.png",0,0,32,68,16);
     }
     public boolean update(GameContainer gameContainer){
         if (gameState == 0) {
