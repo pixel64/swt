@@ -2,6 +2,8 @@ package LevelVerwaltung.SpielerVerwaltung;
 
 import LevelVerwaltung.LevelEntity;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
 
 /**
  * Created by Kenanja on 21.09.2016.
@@ -24,6 +26,13 @@ public class Player extends LevelEntity{
         health = 100;
         weapon = new Weapon("kugelschreiber.png", 20, 20, 30, false);
         weaponCooldownTicks = 0;
+    }
+
+    @Override
+    public void render(GameContainer gameContainer, Graphics graphics, double offsetX, double offsetY) {
+        if(!(invulnerabilityTicks > 0 && ((int)(invulnerabilityTicks/5))%2 == 1)){
+            super.render(gameContainer, graphics, offsetX, offsetY);
+        }
     }
 
     public boolean isOnGround() {
