@@ -52,6 +52,8 @@ public class LevelController {
         graphics.fillRect(20,20,200,20);
         graphics.setColor(Color.green);
         graphics.fillRect(20,20,level.getPlayer().getHealth()*2,20);
+        graphics.setColor(Color.black);
+        graphics.drawRect(20,20,200,20);
 
 
         //waffencd
