@@ -11,11 +11,11 @@ import org.newdawn.slick.Sound;
  * Created by Kenanja on 21.09.2016.
  */
 public class PlayerController {
-    private static final double jumpPower = 13;
+    private static final double jumpPower = 13.5;
     private static final double climbSpeed = 3;
     private static final double walkSpeed = 5;
-    private static final double coffeeMultiplier = 1.5;
-    private static final double coffeeBoostJump = 1.2;
+    private static final double coffeeMultiplier = 1.35;
+    private static final double coffeeBoostJump = 1.17;
     private Sound jumpsound;
     public PlayerController(){
         try {

@@ -39,7 +39,7 @@ public class GameController{
         } catch (SlickException e) {
             e.printStackTrace();
         }
-        System.out.println(((float)settings.getVolume())/100);
+        //System.out.println(((float)settings.getVolume())/100);
         SoundStore.get().setCurrentMusicVolume(((float)settings.getVolume())/100);
         SoundStore.get().setSoundVolume(((float)settings.getVolume())/100);
         bgm.loop();

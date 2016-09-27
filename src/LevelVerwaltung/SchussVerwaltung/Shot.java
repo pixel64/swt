@@ -61,16 +61,8 @@ public class Shot extends LevelEntity {
     @Override
     public void render(GameContainer gameContainer, Graphics graphics, double offsetX, double offsetY) {
         Image renderedImage = img.copy();
-        if(speedX > 0){//Projektil fliegt nach rechts
-
-        }
-        else if (speedX < 0){//Projektil fliegt nach links
-            renderedImage = renderedImage.getFlippedCopy(true, false);
-        }else if (speedY < 0){//Projektil fliegt nach oben
-            renderedImage.rotate(90);
-        }else{//Projektil fliegt nach unten
-            renderedImage.rotate(270);
-        }
+        renderedImage.rotate((float)Math.toDegrees(Math.atan((speedY/speedX))));
+        if(speedX < 0) renderedImage = renderedImage.getFlippedCopy(true,true);
         graphics.drawImage(renderedImage,(float)(x -offsetX),(float)(y -offsetY),(float)((x+width)-offsetX),(float)((y+height)-offsetY),((int)animationPhase)* width, 0,(((int)animationPhase)* width)+ width,height);
     }
 

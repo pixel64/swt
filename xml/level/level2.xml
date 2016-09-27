@@ -556,12 +556,12 @@
         <damagesound>test.ogg</damagesound>
     </entity>
 
-    <entity type="bossB">
-        <path>boss1sprite.png</path>
+    <entity type="bossA">
+        <path>boss2sprite.png</path>
         <posx>3000</posx>
         <posy>600</posy>
-        <width>52</width>
-        <height>84</height>
+        <width>75</width>
+        <height>100</height>
         <health>300</health>
         <isboss>true</isboss>
         <weapon>
