@@ -5,41 +5,51 @@ import LevelVerwaltung.SchussVerwaltung.Shot;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
 
 /**
- * Created by Kenanja on 22.09.2016.
+ * Created by Kenanja on 27.09.2016.
  */
-public class EnemyA extends Enemy {
+public class BossA extends Enemy {
 
     private boolean walkingright;
     private static double jumpPower;
-    public EnemyA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY) {
+    private boolean stasis;
+    private int jumpcd;
+    public BossA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY) {
         super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY);
-        jumpPower= 11;
+        jumpPower= 15;
+        jumpcd = 50;
         walkingright = true;
+        stasis= false;
     }
 
     @Override
     public void update(Level l) {
         if(currentPatternTicks <= 0){
-            currentPattern = (int)(Math.random() * 4);
-           // System.out.println("AI-Pattern:"+currentPattern);
+            currentPattern = (int)(Math.random() * 5);
+            // System.out.println("AI-Pattern:"+currentPattern);
             switch(currentPattern){
                 case 0:
                     currentPatternTicks = 100;
                     break;
                 case 1:
-                    currentPatternTicks = 120;
+                    currentPatternTicks = 100;
                     break;
                 case 2:
-                    currentPatternTicks = 70;
+                    currentPatternTicks = 50;
                     break;
                 case 3:
-                    currentPatternTicks = 120;
+                    currentPatternTicks = 150;
+                    break;
+                case 4:
+                    currentPatternTicks = 200;
                     break;
                 default:
                     currentPatternTicks = 1;
                     break;
             }
+
         }else{
+            stasis = false;
+            isInvulnerable = false;
             switch(currentPattern){
                 case 0://Vom Gegner weglaufen und Springen
                     if (l.getPlayer().getX() < getX()-1){
@@ -52,7 +62,7 @@ public class EnemyA extends Enemy {
                     //System.out.println(isOnGround()+","+jumpCDticks);
                     if(isOnGround() && jumpCDticks <= 0) {
                         setSpeedY(-jumpPower);
-                        jumpCDticks = 75;
+                        jumpCDticks = jumpcd;
                     }
                     break;
                 case 1://Zum gegner Laufen und Schießen
@@ -113,19 +123,65 @@ public class EnemyA extends Enemy {
                     }
                     if(isOnGround() && jumpCDticks <=0){
                         setSpeedY(-jumpPower);
-                        jumpCDticks = 75;
+                        jumpCDticks = jumpcd;
+                    }
+                    break;
+                case 4:
+                    isInvulnerable = true;
+                    stasis = true;
+                    setSpeedY(0);
+                    setAnimationPhase(getAnimationPhase()-0.4);
+                    if(getAnimationPhase() < 16) setAnimationPhase(16.1);
+                    if(shotCDticks<=0){
+                        setAnimationPhase(19.9);//TODO schüsse einfügen
+                        double weaponspeed = getWeapon().getSpeed();
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, weaponspeed, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -weaponspeed, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, 0, weaponspeed,getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, 0, -weaponspeed,getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, Math.sqrt(2* weaponspeed*weaponspeed), Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -Math.sqrt(2* weaponspeed*weaponspeed), Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, Math.sqrt(2* weaponspeed*weaponspeed), -Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        l.addShot(new Shot(
+                                getWeapon().getProjectileImagePath(),
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -Math.sqrt(2* weaponspeed*weaponspeed), -Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                        ));
+                        shotCDticks = getWeapon().getCooldownTicks();
                     }
                     break;
                 default: break;
             }
         }
-        if(!walkingright) {
-            setAnimationPhase(getAnimationPhase() - 0.4);
-            if (getAnimationPhase() < 8) setAnimationPhase(15.9);
-        }else
-        {
-            setAnimationPhase(getAnimationPhase()+0.4);
-            if(getAnimationPhase() >= 8) setAnimationPhase(0);
+        if(!stasis){
+            if(!walkingright) {
+                setAnimationPhase(getAnimationPhase() - 0.4);
+                if (getAnimationPhase() < 8) setAnimationPhase(15.9);
+            }else
+            {
+                setAnimationPhase(getAnimationPhase()+0.4);
+                if(getAnimationPhase() >= 8) setAnimationPhase(0);
+            }
         }
         super.update(l);
 

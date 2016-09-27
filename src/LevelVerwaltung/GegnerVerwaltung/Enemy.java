@@ -7,13 +7,15 @@ import LevelVerwaltung.SpielerVerwaltung.Player;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.geom.Rectangle;
+import org.newdawn.slick.geom.Shape;
 
 /**
  * Created by Kenanja on 21.09.2016.
  */
 public class Enemy extends LevelEntity {
     private int health;
-    private boolean isInvulnerable;
+    protected boolean isInvulnerable;
     private boolean dead;
     private boolean isBoss;
     private Weapon weapon;
@@ -65,7 +67,8 @@ public class Enemy extends LevelEntity {
     }
 
     public void onCollision(Player p){
-        p.takeDamage(weapon.getDamage());
+        Shape smallhitbox = new Rectangle((float)this.getX()+10, (float)this.getY()+5, this.getWidth()-20, this.getHeight()-5); //5 oben rechts und links weggenommen
+        if(p.getHitbox().intersects(smallhitbox)) p.takeDamage(weapon.getDamage());
     }
 
     public double getSpeedX() {
@@ -85,7 +88,6 @@ public class Enemy extends LevelEntity {
     }
 
     public void update(Level l){
-        if(!flying) setSpeedY(getSpeedY()+l.getGravitation());
         this.jumpCDticks--;
         this.shotCDticks--;
         this.currentPatternTicks--;
@@ -94,6 +96,7 @@ public class Enemy extends LevelEntity {
         if(currentPatternTicks<0) currentPatternTicks=0;
         setOnGround(false);
         setY(getY()+getSpeedY());
+        if(!flying) setSpeedY(getSpeedY()+l.getGravitation());
     }
 
     public Weapon getWeapon() {

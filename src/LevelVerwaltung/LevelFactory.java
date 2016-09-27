@@ -1,9 +1,7 @@
 package LevelVerwaltung;
 
 
-import LevelVerwaltung.GegnerVerwaltung.EnemyA;
-import LevelVerwaltung.GegnerVerwaltung.EnemyB;
-import LevelVerwaltung.GegnerVerwaltung.EnemyC;
+import LevelVerwaltung.GegnerVerwaltung.*;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
 import org.newdawn.slick.Image;
 import org.w3c.dom.*;
@@ -58,6 +56,12 @@ public final class LevelFactory {
                 break;
             case "enemyC":
                 level.addEnemy(createEnemyC(element));
+                break;
+            case "bossA":
+                level.addEnemy(createBossA(element));
+                break;
+            case "bossB":
+                level.addEnemy(createBossB(element));
                 break;
             case "healthpack":
                 level.addTile(createHealthPack(element));
@@ -192,6 +196,37 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("animphases").item(0).getTextContent()),
                 createWeapon(e.getElementsByTagName("weapon").item(0))
+        );
+    }
+    private static BossA createBossA(Element e){
+        return new BossA(
+                e.getElementsByTagName("path").item(0).getTextContent(),
+                Double.parseDouble(e.getElementsByTagName("posx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("posy").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
+                16,
+                Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
+                Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
+                createWeapon(e.getElementsByTagName("weapon").item(0)),
+                Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent())
+        );
+    }
+    private static BossB createBossB(Element e){
+        return new BossB(
+                e.getElementsByTagName("path").item(0).getTextContent(),
+                Double.parseDouble(e.getElementsByTagName("posx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("posy").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
+                16,
+                Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
+                Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
+                createWeapon(e.getElementsByTagName("weapon").item(0)),
+                Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("boost").item(0).getTextContent())
         );
     }
 

@@ -546,12 +546,12 @@
         <moveduration>60</moveduration>
     </entity>
 
-    <entity type="enemyA">
-        <path>player.png</path>
+    <entity type="bossB">
+        <path>boss1sprite.png</path>
         <posx>3000</posx>
         <posy>600</posy>
-        <width>32</width>
-        <height>68</height>
+        <width>52</width>
+        <height>84</height>
         <health>300</health>
         <isboss>true</isboss>
         <weapon>
@@ -561,8 +561,9 @@
             <cooldown>80</cooldown>
             <gravity>false</gravity>
         </weapon>
-        <speedx>2</speedx>
+        <speedx>2.15</speedx>
         <speedy>3</speedy>
+        <boost>2.5</boost>
     </entity>
 
     <entity type="coffeepack">

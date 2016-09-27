@@ -9,11 +9,11 @@ import org.newdawn.slick.Input;
  * Created by Kenanja on 21.09.2016.
  */
 public class PlayerController {
-    private static final double jumpPower = 12;
-    private static final double climbSpeed = 6;
+    private static final double jumpPower = 13;
+    private static final double climbSpeed = 3;
     private static final double walkSpeed = 5;
     private static final double coffeeMultiplier = 1.5;
-    private static final double coffeeBoostJump = 1.3;
+    private static final double coffeeBoostJump = 1.2;
     public boolean update(GameContainer gameContainer, Level l){
         Player p = l.getPlayer();
         if(p.getHealth() <= 0) return true;
