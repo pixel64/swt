@@ -464,10 +464,12 @@
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
         <speedx>3</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
+        <damagesound>test.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -483,10 +485,12 @@
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
         <speedx>2</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
+        <damagesound>test.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -502,10 +506,12 @@
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
         <speedx>2</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
+        <damagesound>test.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -521,10 +527,12 @@
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
         <speedx>2</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
+        <damagesound>test.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -540,10 +548,12 @@
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
         <speedx>2.5</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
+        <damagesound>test.ogg</damagesound>
     </entity>
 
     <entity type="bossB">
@@ -560,10 +570,12 @@
             <speed>5</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
         <speedx>2.15</speedx>
         <speedy>3</speedy>
         <boost>2.5</boost>
+        <damagesound>test.ogg</damagesound>
     </entity>
 
     <entity type="coffeepack">
@@ -609,6 +621,7 @@
             <speed>15</speed>
             <cooldown>30</cooldown>
             <gravity>false</gravity>
+            <sound>test.ogg</sound>
         </weapon>
     </entity>
 </level>

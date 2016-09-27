@@ -12,8 +12,8 @@ public class BossB extends Enemy {
     private double speedmultiplier;
     private int speedTicks;
     private int speedCD;
-    public BossB(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY, double speedmultiplier) {
-        super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY);
+    public BossB(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY, double speedmultiplier,String damagesound) {
+        super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY,damagesound);
         aggro =false;
         walkingright= false;
         speedCD = (int)(Math.random()*100)+80;
@@ -25,7 +25,7 @@ public class BossB extends Enemy {
     public void update(Level l) {
         if(!aggro) {
             if (l.getPlayer().getY() < getY() + getHeight() && l.getPlayer().getY() + l.getPlayer().getHeight() > getY()) {
-                if (Math.abs(l.getPlayer().getX() - getX()) < 200)
+                if (Math.abs(l.getPlayer().getX() - getX()) < 700)
                     aggro = true;
             }
         }

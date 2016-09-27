@@ -9,13 +9,15 @@ public class Weapon {
     private int cooldownTicks;
     private String projectileImagePath;
     private boolean gravity;
+    private String soundpath;
 
-    public Weapon(String path, int damage, double speed, int cooldownTicks, boolean gravity){
+    public Weapon(String path, int damage, double speed, int cooldownTicks, boolean gravity, String soundpath){
         this.damage = damage;
         this.speed = speed;
         this.cooldownTicks = cooldownTicks;
         this.projectileImagePath = path;
         this.gravity = gravity;
+        this.soundpath = soundpath;
     }
 
     public int getDamage() {
@@ -57,4 +59,6 @@ public class Weapon {
     public void setGravity(boolean gravity) {
         this.gravity = gravity;
     }
+
+    public String getSound(){return soundpath;}
 }

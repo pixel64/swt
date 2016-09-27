@@ -105,7 +105,8 @@ public final class LevelFactory {
                 Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
                 createWeapon(e.getElementsByTagName("weapon").item(0)),
                 Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
-                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent())
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
+                e.getElementsByTagName("damagesound").item(0).getTextContent()
         );
     }
 
@@ -139,7 +140,8 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("damage").item(0).getTextContent()),
                 Double.parseDouble(e.getElementsByTagName("speed").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("cooldown").item(0).getTextContent()),
-                Boolean.parseBoolean(e.getElementsByTagName("gravity").item(0).getTextContent())
+                Boolean.parseBoolean(e.getElementsByTagName("gravity").item(0).getTextContent()),
+                e.getElementsByTagName("sound").item(0).getTextContent()
                 );
     }
 
@@ -156,7 +158,8 @@ public final class LevelFactory {
                 createWeapon(e.getElementsByTagName("weapon").item(0)),
                 Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
                 Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
-                Integer.parseInt(e.getElementsByTagName("moveduration").item(0).getTextContent())
+                Integer.parseInt(e.getElementsByTagName("moveduration").item(0).getTextContent()),
+                e.getElementsByTagName("damagesound").item(0).getTextContent()
         );
     }
 
@@ -183,7 +186,8 @@ public final class LevelFactory {
                 Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
                 createWeapon(e.getElementsByTagName("weapon").item(0)),
                 Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
-                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent())
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
+                e.getElementsByTagName("damagesound").item(0).getTextContent()
         );
     }
 
@@ -210,7 +214,8 @@ public final class LevelFactory {
                 Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
                 createWeapon(e.getElementsByTagName("weapon").item(0)),
                 Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
-                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent())
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
+                e.getElementsByTagName("damagesound").item(0).getTextContent()
         );
     }
     private static BossB createBossB(Element e){
@@ -226,7 +231,8 @@ public final class LevelFactory {
                 createWeapon(e.getElementsByTagName("weapon").item(0)),
                 Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
                 Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
-                Double.parseDouble(e.getElementsByTagName("boost").item(0).getTextContent())
+                Double.parseDouble(e.getElementsByTagName("boost").item(0).getTextContent()),
+                e.getElementsByTagName("damagesound").item(0).getTextContent()
         );
     }
 

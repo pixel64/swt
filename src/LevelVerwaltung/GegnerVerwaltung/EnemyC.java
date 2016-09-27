@@ -9,8 +9,8 @@ import LevelVerwaltung.SchussVerwaltung.Weapon;
 public class EnemyC extends Enemy{
     private boolean aggro;
     private boolean walkingright;
-    public EnemyC(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY) {
-        super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY);
+    public EnemyC(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY,String damagesound) {
+        super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY,damagesound);
         aggro =false;
         walkingright= false;
     }

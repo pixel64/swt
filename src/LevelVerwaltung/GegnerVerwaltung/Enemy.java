@@ -4,9 +4,7 @@ import LevelVerwaltung.Level;
 import LevelVerwaltung.LevelEntity;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
 import LevelVerwaltung.SpielerVerwaltung.Player;
-import org.newdawn.slick.Color;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
+import org.newdawn.slick.*;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.geom.Shape;
 
@@ -28,7 +26,8 @@ public class Enemy extends LevelEntity {
     private boolean onGround;
     private boolean flying;
     private int maxhealth;
-    public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, Weapon weapon, double speedX, double speedY) {
+    private Sound damagetaken;
+    public Enemy(String path, double x, double y, int width, int height, int maxAnimPhase, int health,boolean isBoss, Weapon weapon, double speedX, double speedY, String damagesound) {
         super(path, x, y, width, height, maxAnimPhase);
         this.health = health;
         this.isBoss = isBoss;
@@ -44,6 +43,11 @@ public class Enemy extends LevelEntity {
         this.jumpCDticks = 0;
         flying = false;
         this.maxhealth = health;
+        try {
+            this.damagetaken = new Sound("res/sounds/"+damagesound);
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -53,6 +57,7 @@ public class Enemy extends LevelEntity {
         if(!isInvulnerable){
             //System.out.println(health + "," + damage);
             health -= damage;
+            damagetaken.play();
             if(health <= 0) dead = true;
         }
         //System.out.println(health);

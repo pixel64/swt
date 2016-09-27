@@ -4,6 +4,8 @@ import LevelVerwaltung.Level;
 import LevelVerwaltung.SchussVerwaltung.Shot;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.Sound;
 
 /**
  * Created by Kenanja on 21.09.2016.
@@ -14,6 +16,16 @@ public class PlayerController {
     private static final double walkSpeed = 5;
     private static final double coffeeMultiplier = 1.5;
     private static final double coffeeBoostJump = 1.2;
+    private Sound jumpsound;
+    public PlayerController(){
+        try {
+            this.jumpsound= new Sound("res/sounds/player_jump.ogg");
+
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
+
+    }
     public boolean update(GameContainer gameContainer, Level l){
         Player p = l.getPlayer();
         if(p.getHealth() <= 0) return true;
@@ -22,6 +34,7 @@ public class PlayerController {
         if(input.isKeyDown(Input.KEY_SPACE)){
             if(p.isOnGround()){
                 p.setSpeedY(-jumpPower);
+                jumpsound.play();
                 if(p.getCoffeeTicks() > 0){
                     p.setSpeedY(-jumpPower*coffeeBoostJump);
                 }
@@ -63,25 +76,25 @@ public class PlayerController {
             if (input.isKeyDown(Input.KEY_LEFT)) {
                 l.addShot(new Shot(
                     p.getWeapon().getProjectileImagePath(),
-                        p.getX()-24, p.getY() + p.getHeight() *1/3, 20, 5, 1, -p.getWeapon().getSpeed(), (p.getWeapon().isGravity()? -5:0),p.getWeapon().isGravity(), p.getWeapon().getDamage(),true
+                        p.getX()-24, p.getY() + p.getHeight() *1/3, 20, 5, 1, -p.getWeapon().getSpeed(), (p.getWeapon().isGravity()? -5:0),p.getWeapon().isGravity(), p.getWeapon().getDamage(),true, p.getWeapon().getSound(),true
                 ));
                 p.setWeaponCooldownTicks(p.getWeapon().getCooldownTicks());
             } else if (input.isKeyDown(Input.KEY_RIGHT)) {
                 l.addShot(new Shot(
                         p.getWeapon().getProjectileImagePath(),
-                        p.getX()+ p.getWidth() + 4, p.getY() + p.getHeight() *1/3, 20, 5, 1, p.getWeapon().getSpeed(), (p.getWeapon().isGravity()? -5:0),p.getWeapon().isGravity(), p.getWeapon().getDamage(),true
+                        p.getX()+ p.getWidth() + 4, p.getY() + p.getHeight() *1/3, 20, 5, 1, p.getWeapon().getSpeed(), (p.getWeapon().isGravity()? -5:0),p.getWeapon().isGravity(), p.getWeapon().getDamage(),true, p.getWeapon().getSound(),true
                 ));
                 p.setWeaponCooldownTicks(p.getWeapon().getCooldownTicks());
             } else if (input.isKeyDown(Input.KEY_UP)) {
                 l.addShot(new Shot(
                         p.getWeapon().getProjectileImagePath(),
-                        p.getX()+ p.getWidth()/2, p.getY() -9 , 20, 5, 1, 0, -p.getWeapon().getSpeed() ,p.getWeapon().isGravity(), p.getWeapon().getDamage(),true
+                        p.getX()+ p.getWidth()/2, p.getY() -9 , 20, 5, 1, 0, -p.getWeapon().getSpeed() ,p.getWeapon().isGravity(), p.getWeapon().getDamage(),true, p.getWeapon().getSound(),true
                 ));
                 p.setWeaponCooldownTicks(p.getWeapon().getCooldownTicks());
             } else if (input.isKeyDown(Input.KEY_DOWN)) {
                 l.addShot(new Shot(
                         p.getWeapon().getProjectileImagePath(),
-                        p.getX()+p.getWidth()/2 , p.getY() + p.getHeight() +4 , 20, 5, 1, 0, p.getWeapon().getSpeed() ,p.getWeapon().isGravity(), p.getWeapon().getDamage(),true
+                        p.getX()+p.getWidth()/2 , p.getY() + p.getHeight() +4 , 20, 5, 1, 0, p.getWeapon().getSpeed() ,p.getWeapon().isGravity(), p.getWeapon().getDamage(),true, p.getWeapon().getSound(),true
                 ));
                 p.setWeaponCooldownTicks(p.getWeapon().getCooldownTicks());
             }

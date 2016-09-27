@@ -4,6 +4,8 @@ import LevelVerwaltung.LevelEntity;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.SlickException;
+import org.newdawn.slick.Sound;
 
 /**
  * Created by Kenanja on 21.09.2016.
@@ -17,6 +19,8 @@ public class Player extends LevelEntity{
     private int health;
     private int weaponCooldownTicks;
     private Weapon weapon;
+    private Sound damagetaken;
+
     public Player(String path, double x, double y, int width, int height, int maxAnimPhase) {
         super(path, x, y, width, height, maxAnimPhase);
         onGround = false;
@@ -24,8 +28,13 @@ public class Player extends LevelEntity{
         coffeeTicks = 0;
         invulnerabilityTicks = 30;
         health = 100;
-        weapon = new Weapon("kugelschreiber.png", 20, 20, 30, false);
+        weapon = new Weapon("kugelschreiber.png", 20, 20, 30, false, "kugelschreiber_sound.ogg");
         weaponCooldownTicks = 0;
+        try {
+            this.damagetaken = new Sound("res/sounds/player_dmg.ogg");
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -111,6 +120,7 @@ public class Player extends LevelEntity{
         if(invulnerabilityTicks <= 0) {
             health -= damage;
             invulnerabilityTicks = 50;
+            damagetaken.play();
         }
     }
 

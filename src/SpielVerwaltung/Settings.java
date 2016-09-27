@@ -1,6 +1,7 @@
 package SpielVerwaltung;
 
 import jdk.internal.util.xml.XMLStreamException;
+import org.newdawn.slick.openal.SoundStore;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -40,6 +41,8 @@ public class Settings {
 
     public void setVolume(int v){
         volume = v;
+        SoundStore.get().setMusicVolume(((float)v)/100);
+        SoundStore.get().setSoundVolume(((float)v)/100);
         doc.getDocumentElement().getElementsByTagName("volume").item(0).setTextContent(String.valueOf(volume));
         try {
             Transformer transformer = TransformerFactory.newInstance().newTransformer();

@@ -4,9 +4,7 @@ import LevelVerwaltung.GegnerVerwaltung.Enemy;
 import LevelVerwaltung.Level;
 import LevelVerwaltung.LevelEntity;
 import LevelVerwaltung.SpielerVerwaltung.Player;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Image;
+import org.newdawn.slick.*;
 
 /**
  * Created by Kenanja on 21.09.2016.
@@ -18,7 +16,8 @@ public class Shot extends LevelEntity {
     private boolean dead;
     private boolean influencedByGravity;
     private boolean ownerisplayer;
-    public Shot(String path, double x, double y, int width, int height, int maxAnimPhase, double speedX, double speedY, boolean influencedByGravity, int damage, boolean player) {
+    private Sound shotcreated;
+    public Shot(String path, double x, double y, int width, int height, int maxAnimPhase, double speedX, double speedY, boolean influencedByGravity, int damage, boolean player, String soundpath, boolean nearplayer) {
         super(path, x, y, width, height, maxAnimPhase);
         this.speedX = speedX;
         this.speedY = speedY;
@@ -26,6 +25,13 @@ public class Shot extends LevelEntity {
         this.damage = damage;
         dead = false;
         ownerisplayer = player;
+        try {
+            shotcreated = new Sound("res/sounds/"+soundpath);
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
+        if(nearplayer)
+        shotcreated.play();
     }
 
     public void onCollision(Enemy e){

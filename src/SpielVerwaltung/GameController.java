@@ -3,9 +3,8 @@ package SpielVerwaltung;
 import LevelVerwaltung.LevelController;
 import LevelVerwaltung.SpielerVerwaltung.Player;
 import MenuVerwaltung.MenuController;
-import org.newdawn.slick.GameContainer;
-import org.newdawn.slick.Graphics;
-import org.newdawn.slick.SlickException;
+import org.newdawn.slick.*;
+import org.newdawn.slick.openal.SoundStore;
 
 import java.util.ArrayList;
 
@@ -18,6 +17,7 @@ public class GameController{
     private MenuController menuController;
     private Settings settings;
     private Player player;
+    private Music bgm;
     private int gameState; // 0 = Hochgefahren, Menü startet, 1 = spielend, 2 = pausiert, 3 = game over, 4 = level clear, 5 = you win
     private int levelnumber;
     private static int maxLevelNumber = 3; //Anzahl aller level
@@ -34,6 +34,15 @@ public class GameController{
         this.gameState = 0;
         this.levelnumber = 0;
         this.player = new Player("player.png",0,0,32,68,16);
+        try {
+            this.bgm = new Music("res/sounds/bgm.ogg");
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
+        System.out.println(((float)settings.getVolume())/100);
+        SoundStore.get().setCurrentMusicVolume(((float)settings.getVolume())/100);
+        SoundStore.get().setSoundVolume(((float)settings.getVolume())/100);
+        bgm.loop();
     }
     public boolean update(GameContainer gameContainer){
         if (gameState == 0) {

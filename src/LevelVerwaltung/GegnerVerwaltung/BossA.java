@@ -13,8 +13,8 @@ public class BossA extends Enemy {
     private static double jumpPower;
     private boolean stasis;
     private int jumpcd;
-    public BossA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY) {
-        super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY);
+    public BossA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY,String damagesound) {
+        super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY ,damagesound);
         jumpPower= 15;
         jumpcd = 50;
         walkingright = true;
@@ -50,6 +50,9 @@ public class BossA extends Enemy {
         }else{
             stasis = false;
             isInvulnerable = false;
+            double distancex = Math.abs(getX()-l.getPlayer().getX());
+            double distancey = Math.abs(getY()-l.getPlayer().getY());
+            boolean nearplayer = (distancex < 400 && distancey<300);
             switch(currentPattern){
                 case 0://Vom Gegner weglaufen und Springen
                     if (l.getPlayer().getX() < getX()-1){
@@ -72,7 +75,7 @@ public class BossA extends Enemy {
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -82,7 +85,7 @@ public class BossA extends Enemy {
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -106,7 +109,7 @@ public class BossA extends Enemy {
                         if(shotCDticks <= 0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                    getX()-24, getY() + getHeight() *1/3, 20, 5, 1, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -116,7 +119,7 @@ public class BossA extends Enemy {
                         if(shotCDticks<=0){
                             l.addShot(new Shot(
                                     getWeapon().getProjectileImagePath(),
-                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                    getX()+ getWidth() + 4, getY() + getHeight() *1/3, 20, 5, 1, getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                             ));
                             shotCDticks = getWeapon().getCooldownTicks();
                         }
@@ -133,39 +136,39 @@ public class BossA extends Enemy {
                     setAnimationPhase(getAnimationPhase()-0.4);
                     if(getAnimationPhase() < 16) setAnimationPhase(16.1);
                     if(shotCDticks<=0){
-                        setAnimationPhase(19.9);//TODO schüsse einfügen
+                        setAnimationPhase(19.9);
                         double weaponspeed = getWeapon().getSpeed();
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, weaponspeed, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, weaponspeed, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -weaponspeed, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -weaponspeed, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, 0, weaponspeed,getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, 0, weaponspeed,getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, 0, -weaponspeed,getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, 0, -weaponspeed,getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, Math.sqrt(2* weaponspeed*weaponspeed), Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, Math.sqrt(2* weaponspeed*weaponspeed), Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -Math.sqrt(2* weaponspeed*weaponspeed), Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -Math.sqrt(2* weaponspeed*weaponspeed), Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, Math.sqrt(2* weaponspeed*weaponspeed), -Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, Math.sqrt(2* weaponspeed*weaponspeed), -Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         l.addShot(new Shot(
                                 getWeapon().getProjectileImagePath(),
-                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -Math.sqrt(2* weaponspeed*weaponspeed), -Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false
+                                getX()+ (getWidth()/2), getY() + getHeight()/2, 20, 5, 1, -Math.sqrt(2* weaponspeed*weaponspeed), -Math.sqrt(2*weaponspeed*weaponspeed),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                         ));
                         shotCDticks = getWeapon().getCooldownTicks();
                     }
