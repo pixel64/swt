@@ -15,7 +15,7 @@ public class Main extends BasicGame {
     public static void main(String[] args) {
         try
         {
-            app = new AppGameContainer(new Main("THMtertainment"));
+            app = new AppGameContainer(new Main("Project X-Matrikulation"));
             app.setDisplayMode(800, 600, false);
             app.setTargetFrameRate(60);
             app.setVSync(true);

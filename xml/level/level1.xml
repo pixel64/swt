@@ -451,11 +451,11 @@
 
 
     <entity type="enemyB">
-        <path>player.png</path>
+        <path>enemy2punksprite.png</path>
         <posx>950</posx>
         <posy>620</posy>
-        <width>32</width>
-        <height>68</height>
+        <width>54</width>
+        <height>100</height>
         <health>40</health>
         <isboss>false</isboss>
         <weapon>
@@ -470,7 +470,7 @@
         <moveduration>60</moveduration>
     </entity>
     <entity type="enemyC">
-        <path>player.png</path>
+        <path>zombiesprite.png</path>
         <posx>1030</posx>
         <posy>620</posy>
         <width>32</width>
@@ -489,7 +489,7 @@
         <moveduration>60</moveduration>
     </entity>
     <entity type="enemyC">
-        <path>player.png</path>
+        <path>zombiesprite.png</path>
         <posx>1600</posx>
         <posy>620</posy>
         <width>32</width>
@@ -508,7 +508,7 @@
         <moveduration>60</moveduration>
     </entity>
     <entity type="enemyC">
-        <path>player.png</path>
+        <path>zombiesprite.png</path>
         <posx>2200</posx>
         <posy>620</posy>
         <width>32</width>
@@ -527,7 +527,7 @@
         <moveduration>60</moveduration>
     </entity>
     <entity type="enemyC">
-        <path>player.png</path>
+        <path>zombiesprite.png</path>
         <posx>2300</posx>
         <posy>620</posy>
         <width>32</width>
