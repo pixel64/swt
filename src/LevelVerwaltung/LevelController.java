@@ -59,14 +59,14 @@ public class LevelController {
         //waffencd
         try {
             Image weapon = new Image("res/img/"+level.getPlayer().getWeapon().getImagePath());
-            graphics.drawImage(weapon,760,20,780,40,0,0,20,20);
+            graphics.drawImage(weapon,760, (float) (20 + 20 * ((double) level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),780,40,0,(float) (20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),20,20);
         } catch (SlickException e) {
             e.printStackTrace();
         }
-        graphics.setColor(Color.gray);
-        graphics.fillRect(761,(float)(40 - 20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),19,(float)(20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())));
-        graphics.setColor(Color.black);
-        graphics.drawRect(760,20,20,20);
+       // graphics.setColor(Color.gray);
+        //graphics.fillRect(761,(float)(40 - 20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),19,(float)(20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())));
+       // graphics.setColor(Color.black);
+      //  graphics.drawRect(760,20,20,20);
         //kaffeebar
         if(level.getPlayer().getCoffeeTicks() > 0) {
             try {
