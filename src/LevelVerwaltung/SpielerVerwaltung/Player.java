@@ -28,7 +28,7 @@ public class Player extends LevelEntity{
         coffeeTicks = 0;
         invulnerabilityTicks = 30;
         health = 100;
-        weapon = new Weapon("kugelschreiber.png", 20, 20, 30, false, "kugelschreiber_sound.ogg");
+        weapon = new Weapon("kugelschreiber_projectile.png", 20, 20, 30, false, "kugelschreiber_sound.ogg","kugelschreiber.png");
         weaponCooldownTicks = 0;
         try {
             this.damagetaken = new Sound("res/sounds/player_dmg.ogg");

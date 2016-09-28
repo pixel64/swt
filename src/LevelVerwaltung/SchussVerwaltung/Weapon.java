@@ -10,14 +10,16 @@ public class Weapon {
     private String projectileImagePath;
     private boolean gravity;
     private String soundpath;
+    private String imagePath;
 
-    public Weapon(String path, int damage, double speed, int cooldownTicks, boolean gravity, String soundpath){
+    public Weapon(String path, int damage, double speed, int cooldownTicks, boolean gravity, String soundpath, String imagePath){
         this.damage = damage;
         this.speed = speed;
         this.cooldownTicks = cooldownTicks;
         this.projectileImagePath = path;
         this.gravity = gravity;
         this.soundpath = soundpath;
+        this.imagePath = imagePath;
     }
 
     public int getDamage() {
@@ -61,4 +63,6 @@ public class Weapon {
     }
 
     public String getSound(){return soundpath;}
+
+    public String getImagePath(){return imagePath;}
 }

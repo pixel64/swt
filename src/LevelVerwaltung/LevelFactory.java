@@ -141,7 +141,8 @@ public final class LevelFactory {
                 Double.parseDouble(e.getElementsByTagName("speed").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("cooldown").item(0).getTextContent()),
                 Boolean.parseBoolean(e.getElementsByTagName("gravity").item(0).getTextContent()),
-                e.getElementsByTagName("sound").item(0).getTextContent()
+                e.getElementsByTagName("sound").item(0).getTextContent(),
+                e.getElementsByTagName("image").item(0).getTextContent()
                 );
     }
 

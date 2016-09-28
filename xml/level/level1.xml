@@ -459,12 +459,13 @@
         <health>40</health>
         <isboss>false</isboss>
         <weapon>
-            <path>Kugelschreiber.png</path>
+            <path>Kugelschreiber_projectile.png</path>
             <damage>10</damage>
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
         </weapon>
         <speedx>3</speedx>
         <speedy>3</speedy>
@@ -480,12 +481,13 @@
         <health>40</health>
         <isboss>false</isboss>
         <weapon>
-            <path>Kugelschreiber.png</path>
+            <path>Kugelschreiber_projectile.png</path>
             <damage>15</damage>
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
         </weapon>
         <speedx>2</speedx>
         <speedy>3</speedy>
@@ -501,12 +503,13 @@
         <health>40</health>
         <isboss>false</isboss>
         <weapon>
-            <path>Kugelschreiber.png</path>
+            <path>Kugelschreiber_projectile.png</path>
             <damage>15</damage>
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
         </weapon>
         <speedx>2</speedx>
         <speedy>3</speedy>
@@ -522,12 +525,13 @@
         <health>40</health>
         <isboss>false</isboss>
         <weapon>
-            <path>Kugelschreiber.png</path>
+            <path>Kugelschreiber_projectile.png</path>
             <damage>15</damage>
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
         </weapon>
         <speedx>2</speedx>
         <speedy>3</speedy>
@@ -543,12 +547,13 @@
         <health>40</health>
         <isboss>false</isboss>
         <weapon>
-            <path>Kugelschreiber.png</path>
+            <path>Kugelschreiber_projectile.png</path>
             <damage>15</damage>
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
         </weapon>
         <speedx>2.5</speedx>
         <speedy>3</speedy>
@@ -565,12 +570,13 @@
         <health>300</health>
         <isboss>true</isboss>
         <weapon>
-            <path>Kugelschreiber.png</path>
-            <damage>10</damage>
-            <speed>5</speed>
+            <path>Kugelschreiber_projectile.png</path>
+            <damage>15</damage>
+            <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
         </weapon>
         <speedx>2.15</speedx>
         <speedy>3</speedy>
@@ -622,6 +628,7 @@
             <cooldown>30</cooldown>
             <gravity>false</gravity>
             <sound>test.ogg</sound>
+            <image>edding.png</image>
         </weapon>
     </entity>
 </level>

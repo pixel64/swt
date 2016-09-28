@@ -57,21 +57,24 @@ public class LevelController {
 
 
         //waffencd
-        graphics.setColor(Color.white);
-        graphics.fillRect(760,20,20,20);
-        graphics.setColor(Color.black);
-        graphics.drawRect(760,20,20,20);
+        try {
+            Image weapon = new Image("res/img/"+level.getPlayer().getWeapon().getImagePath());
+            graphics.drawImage(weapon,760,20,780,40,0,0,20,20);
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
         graphics.setColor(Color.gray);
         graphics.fillRect(761,(float)(40 - 20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())),19,(float)(20 *((double)level.getPlayer().getWeaponCooldownTicks()/(double)level.getPlayer().getWeapon().getCooldownTicks())));
-
+        graphics.setColor(Color.black);
+        graphics.drawRect(760,20,20,20);
         //kaffeebar
         if(level.getPlayer().getCoffeeTicks() > 0) {
-            graphics.setColor(Color.gray);
-            graphics.fillRect(730, 20, 20, 20);
-            graphics.setColor(Color.black);
-            graphics.drawRect(730, 20, 20, 20);
-            graphics.setColor(new Color(127,51,0));
-            graphics.fillRect(731, (float) (40 - 20 * ((double) level.getPlayer().getCoffeeTicks() / 600)), 19, (float) (20 * ((double) level.getPlayer().getCoffeeTicks() / 600)));
+            try {
+                Image coffee = new Image("res/img/coffee.png");
+                graphics.drawImage(coffee,730, (float) (40 - 20 * ((double) level.getPlayer().getCoffeeTicks() / 600)),750,40,20,(float) (20-20 * ((double) level.getPlayer().getCoffeeTicks() / 600)),40,20);
+            } catch (SlickException e) {
+                e.printStackTrace();
+            }
         }
 
 
