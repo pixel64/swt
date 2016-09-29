@@ -6,8 +6,8 @@ import LevelVerwaltung.SpielerVerwaltung.Player;
  * Created by Kenanja on 21.09.2016.
  */
 public class CoffeePack extends HealthPack{
-    public CoffeePack(String path, double x, double y, int width, int height, int maxAnimPhase, int healing) {
-        super(path, x, y, width, height, maxAnimPhase, healing);
+    public CoffeePack(String path, double x, double y, int width, int height, int maxAnimPhase, int healing, String sound) {
+        super(path, x, y, width, height, maxAnimPhase, healing, sound);
     }
 
     @Override

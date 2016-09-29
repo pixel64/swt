@@ -118,7 +118,8 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("animphases").item(0).getTextContent()),
-                Integer.parseInt(e.getElementsByTagName("heal").item(0).getTextContent())
+                Integer.parseInt(e.getElementsByTagName("heal").item(0).getTextContent()),
+                e.getElementsByTagName("sound").item(0).getTextContent()
         );
     }
     private static CoffeePack createCoffeePack(Element e){
@@ -129,7 +130,8 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("animphases").item(0).getTextContent()),
-                Integer.parseInt(e.getElementsByTagName("heal").item(0).getTextContent())
+                Integer.parseInt(e.getElementsByTagName("heal").item(0).getTextContent()),
+                e.getElementsByTagName("sound").item(0).getTextContent()
         );
     }
 
@@ -200,7 +202,8 @@ public final class LevelFactory {
                 Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("animphases").item(0).getTextContent()),
-                createWeapon(e.getElementsByTagName("weapon").item(0))
+                createWeapon(e.getElementsByTagName("weapon").item(0)),
+                e.getElementsByTagName("sound").item(0).getTextContent()
         );
     }
     private static BossA createBossA(Element e){

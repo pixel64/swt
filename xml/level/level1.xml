@@ -592,6 +592,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <heal>20</heal>
+        <sound>coffee.ogg</sound>
     </entity>
 
 
@@ -604,6 +605,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <heal>60</heal>
+        <sound>heal.ogg</sound>
     </entity>
     <entity type="coffeepack">
         <path>coffee.png</path>
@@ -613,6 +615,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <heal>20</heal>
+        <sound>coffee.ogg</sound>
     </entity>
     <entity type="weapon">
         <path>edding.png</path>
@@ -621,6 +624,7 @@
         <width>20</width>
         <height>20</height>
         <animphases>2</animphases>
+        <sound>eddingpickup.ogg</sound>
         <weapon>
             <path>eddingprojectile.png</path>
             <damage>30</damage>
