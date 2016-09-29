@@ -31,10 +31,10 @@ public class BossB extends Enemy {
             }
         }
         else{
-            if (l.getPlayer().getX() < getX()-1){
+            if (l.getPlayer().getX() < getX()-5){
                 setX(getX() - getSpeedX()*((speedTicks>0?speedmultiplier:1)));
                 walkingright = false;
-            }else if(l.getPlayer().getX() > getX()+1){
+            }else if(l.getPlayer().getX() > getX()+5){
                 setX(getX() + getSpeedX()*((speedTicks>0?speedmultiplier:1)));
                 walkingright = true;
             }

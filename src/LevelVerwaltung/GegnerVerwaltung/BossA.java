@@ -65,6 +65,7 @@ public class BossA extends Enemy {
         }else {
             stasis = false;
             isInvulnerable = false;
+            setFlying(false);
             double distancex = Math.abs(getX()-l.getPlayer().getX());
             double distancey = Math.abs(getY()-l.getPlayer().getY());
             boolean nearplayer = (distancex < 1000 && distancey<500);
@@ -148,7 +149,7 @@ public class BossA extends Enemy {
                 case 4:
                     isInvulnerable = true;
                     stasis = true;
-                    setSpeedY(0);
+                    setFlying(true);
                     //System.out.println((double)shotCDticks/getWeapon().getCooldownTicks());
                     setAnimationPhase(20-  (((double)shotCDticks/getWeapon().getCooldownTicks())*6));
                     if(getAnimationPhase()<16) {

@@ -27,12 +27,15 @@ public class Tile extends LevelEntity {
             //Von Links
             if (distleft <= distright)
             {
-                if ((disttop <= distleft && distleft >= Math.abs(p.getSpeedX())&& p.getSpeedY() >= 0))// Abstand Oben < Abstand links
+                if ((disttop <= distleft && distleft >= Math.abs(p.getSpeedX())&& p.getSpeedY() >=0))// Abstand Oben < Abstand links
                 {
                     //System.out.println("1");
                     p.setY(getY() - p.getHeight());
-                    p.setOnGround(true);
-                    p.setSpeedY(0);
+
+                    if(distleft > Math.abs(p.getSpeedX())) {
+                        p.setSpeedY(0);
+                        p.setOnGround(true);
+                    }
                 }
                 else
                 // Abstand links < Abstand Oben
@@ -48,8 +51,10 @@ public class Tile extends LevelEntity {
                 {
                     //System.out.println("3");
                     p.setY(getY() - p.getHeight());
-                    p.setOnGround(true);
-                    p.setSpeedY(0);
+                    if(distright > Math.abs(p.getSpeedX())) {
+                        p.setSpeedY(0);
+                        p.setOnGround(true);
+                    }
 
                 }
                 else
