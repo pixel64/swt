@@ -411,24 +411,146 @@
         <height>40</height>
         <animphases>1</animphases>
     </entity>
+    <entity type="tile">
+        <path>wall5hor.png</path>
+        <posx>2400</posx>
+        <posy>480</posy>
+        <width>200</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall5hor.png</path>
+        <posx>2640</posx>
+        <posy>400</posy>
+        <width>200</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall5hor.png</path>
+        <posx>2880</posx>
+        <posy>320</posy>
+        <width>200</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall5hor.png</path>
+        <posx>3120</posx>
+        <posy>240</posy>
+        <width>200</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall3ver.png</path>
+        <posx>3480</posx>
+        <posy>700</posy>
+        <width>40</width>
+        <height>120</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>3280</posx>
+        <posy>660</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>3320</posx>
+        <posy>660</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>3040</posx>
+        <posy>660</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>3080</posx>
+        <posy>660</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>3000</posx>
+        <posy>420</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>3040</posx>
+        <posy>420</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>2820</posx>
+        <posy>620</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>2860</posx>
+        <posy>620</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>2600</posx>
+        <posy>660</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+    <entity type="tile">
+        <path>wall.png</path>
+        <posx>2640</posx>
+        <posy>660</posy>
+        <width>40</width>
+        <height>40</height>
+        <animphases>1</animphases>
+    </entity>
+
+
 
 
 
     <entity type="bossA">
         <path>boss2sprite.png</path>
-        <posx>3200</posx>
+        <posx>3400</posx>
         <posy>620</posy>
         <width>75</width>
         <height>100</height>
         <health>300</health>
         <isboss>true</isboss>
         <weapon>
-            <path>Kugelschreiber_projectile.png</path>
+            <path>rj45.png</path>
             <damage>10</damage>
             <speed>5</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
-            <sound>test.ogg</sound>
+            <sound>rj45.ogg</sound>
             <image>kugelscheiber.png</image>
         </weapon>
         <speedx>2.15</speedx>

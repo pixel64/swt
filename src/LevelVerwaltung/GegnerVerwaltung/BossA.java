@@ -15,7 +15,7 @@ public class BossA extends Enemy {
     private int jumpcd;
     public BossA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY,String damagesound) {
         super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY ,damagesound);
-        jumpPower= 12;
+        jumpPower= 15;
         jumpcd = 50;
         walkingright = true;
         stasis= false;
@@ -26,10 +26,15 @@ public class BossA extends Enemy {
     @Override
     public void update(Level l) {
         if(!aggro){
+            currentPatternTicks = 2;
             if (l.getPlayer().getY() < getY() + getHeight() && l.getPlayer().getY() + l.getPlayer().getHeight() > getY()) {
-                if (Math.abs(l.getPlayer().getX() - getX()) < 600)
+                if (Math.abs(l.getPlayer().getX() - getX()) < 800) {
                     aggro = true;
                     isInvulnerable = false;
+                }
+            }
+            else{
+                isInvulnerable = true;
             }
 
         }else if(currentPatternTicks <= 0){
@@ -57,7 +62,7 @@ public class BossA extends Enemy {
                     break;
             }
 
-        }else{
+        }else {
             stasis = false;
             isInvulnerable = false;
             double distancex = Math.abs(getX()-l.getPlayer().getX());
@@ -190,6 +195,7 @@ public class BossA extends Enemy {
                 default: break;
             }
         }
+        System.out.println(isInvulnerable);
         if(!stasis){
             if(!walkingright) {
                 setAnimationPhase(getAnimationPhase() - 0.4);

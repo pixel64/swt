@@ -50,7 +50,7 @@ public class GameController{
             int start = menuController.update(gameContainer);
             if(start == 1){
                 gameState = 1;
-                levelController.loadLevel("level2.xml");
+                levelController.loadLevel("level1.xml");
                 this.player= levelController.getLevel().getPlayer();
                 levelnumber = 1;
             }else if (start == 2) {

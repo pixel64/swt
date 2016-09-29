@@ -239,5 +239,22 @@ public final class LevelFactory {
                 e.getElementsByTagName("damagesound").item(0).getTextContent()
         );
     }
+    private static BossC createBossC(Element e){
+        return new BossC(
+                e.getElementsByTagName("path").item(0).getTextContent(),
+                Double.parseDouble(e.getElementsByTagName("posx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("posy").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
+                Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
+                7,
+                Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
+                Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
+                createWeapon(e.getElementsByTagName("weapon").item(0)),
+                Double.parseDouble(e.getElementsByTagName("speedx").item(0).getTextContent()),
+                Double.parseDouble(e.getElementsByTagName("speedy").item(0).getTextContent()),
+                e.getElementsByTagName("damagesound").item(0).getTextContent(),
+                Integer.parseInt(e.getElementsByTagName("movingticks").item(0).getTextContent())
+        );
+    }
 
 }
