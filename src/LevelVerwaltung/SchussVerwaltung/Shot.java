@@ -50,11 +50,11 @@ public class Shot extends LevelEntity {
     }
 
     public void update(GameContainer gameContainer, Level l){
-        setAnimationPhase(getAnimationPhase()-0.33);
-        if(getAnimationPhase()<0)setAnimationPhase(getMaxAnimPhase());
+        setAnimationPhase(getAnimationPhase()-0.2);
+        if(getAnimationPhase()<0)setAnimationPhase(getMaxAnimPhase()-0.1);
         setX(getX()+speedX);
         if(influencedByGravity){
-            speedY += l.getGravitation()*3;
+            speedY += l.getGravitation()*1.5;
         }
         setY(getY()+speedY);
 

@@ -19,6 +19,7 @@ public class BossB extends Enemy {
         speedCD = (int)(Math.random()*100)+80;
         speedTicks = 0;
         this.speedmultiplier = speedmultiplier;
+        setFlying(false);
     }
 
     @Override

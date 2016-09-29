@@ -67,7 +67,7 @@ public class BossA extends Enemy {
             isInvulnerable = false;
             double distancex = Math.abs(getX()-l.getPlayer().getX());
             double distancey = Math.abs(getY()-l.getPlayer().getY());
-            boolean nearplayer = (distancex < 400 && distancey<300);
+            boolean nearplayer = (distancex < 1000 && distancey<500);
             switch(currentPattern){
                 case 0://Vom Gegner weglaufen und Springen
                     if (l.getPlayer().getX() < getX()-1){
@@ -195,7 +195,7 @@ public class BossA extends Enemy {
                 default: break;
             }
         }
-        System.out.println(isInvulnerable);
+       // System.out.println(isInvulnerable);
         if(!stasis){
             if(!walkingright) {
                 setAnimationPhase(getAnimationPhase() - 0.4);

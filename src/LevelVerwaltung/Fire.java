@@ -15,6 +15,7 @@ public class Fire extends Tile {
 
     @Override
     public void onCollision(Player p) {
+        if(p.getY()+p.getHeight() > getY()+5)
         p.takeDamage(damage);
     }
 }

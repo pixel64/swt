@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<level backgroundimage = "level1background.png" playerposx="540" playerposy="500">
+<level backgroundimage = "level2background.png" playerposx="540" playerposy="500">
     <entity type="tile">
         <path>wall8ver.png</path>
         <posx>920</posx>
@@ -414,7 +414,7 @@
     <entity type="tile">
         <path>wall5hor.png</path>
         <posx>2400</posx>
-        <posy>480</posy>
+        <posy>440</posy>
         <width>200</width>
         <height>40</height>
         <animphases>1</animphases>
@@ -422,7 +422,7 @@
     <entity type="tile">
         <path>wall5hor.png</path>
         <posx>2640</posx>
-        <posy>400</posy>
+        <posy>360</posy>
         <width>200</width>
         <height>40</height>
         <animphases>1</animphases>
@@ -430,7 +430,7 @@
     <entity type="tile">
         <path>wall5hor.png</path>
         <posx>2880</posx>
-        <posy>320</posy>
+        <posy>280</posy>
         <width>200</width>
         <height>40</height>
         <animphases>1</animphases>
@@ -438,17 +438,17 @@
     <entity type="tile">
         <path>wall5hor.png</path>
         <posx>3120</posx>
-        <posy>240</posy>
+        <posy>200</posy>
         <width>200</width>
         <height>40</height>
         <animphases>1</animphases>
     </entity>
     <entity type="tile">
-        <path>wall3ver.png</path>
-        <posx>3480</posx>
-        <posy>700</posy>
+        <path>wall8ver.png</path>
+        <posx>3560</posx>
+        <posy>180</posy>
         <width>40</width>
-        <height>120</height>
+        <height>320</height>
         <animphases>1</animphases>
     </entity>
     <entity type="tile">
@@ -531,8 +531,347 @@
         <height>40</height>
         <animphases>1</animphases>
     </entity>
+    <entity type="tile">
+        <path>wall8ver.png</path>
+        <posx>3560</posx>
+        <posy>500</posy>
+        <width>40</width>
+        <height>320</height>
+        <animphases>1</animphases>
+    </entity>
 
 
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1080</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1120</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1160</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1200</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1240</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1280</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1320</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1360</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>880</posx>
+        <posy>860</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1040</posx>
+        <posy>540</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>1800</posx>
+        <posy>340</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2000</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2040</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2080</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2120</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2160</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2200</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2240</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2280</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="fire">
+        <path>fire.png</path>
+        <posx>2320</posx>
+        <posy>820</posy>
+        <width>40</width>
+        <height>80</height>
+        <animphases>4</animphases>
+        <damage>20</damage>
+    </entity>
+    <entity type="enemyC">
+        <path>zombiesprite.png</path>
+        <posx>1000</posx>
+        <posy>820</posy>
+        <width>32</width>
+        <height>68</height>
+        <health>50</health>
+        <isboss>false</isboss>
+        <weapon>
+            <path>Kugelschreiber_projectile.png</path>
+            <damage>15</damage>
+            <speed>6</speed>
+            <cooldown>80</cooldown>
+            <gravity>false</gravity>
+            <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
+        </weapon>
+        <speedx>2</speedx>
+        <speedy>3</speedy>
+        <moveduration>60</moveduration>
+        <damagesound>zombie_dmg.ogg</damagesound>
+    </entity>
+    <entity type="enemyC">
+        <path>zombiesprite.png</path>
+        <posx>1740</posx>
+        <posy>280</posy>
+        <width>32</width>
+        <height>68</height>
+        <health>70</health>
+        <isboss>false</isboss>
+        <weapon>
+            <path>Kugelschreiber_projectile.png</path>
+            <damage>25</damage>
+            <speed>6</speed>
+            <cooldown>80</cooldown>
+            <gravity>false</gravity>
+            <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
+        </weapon>
+        <speedx>5</speedx>
+        <speedy>3</speedy>
+        <moveduration>60</moveduration>
+        <damagesound>zombie_dmg.ogg</damagesound>
+    </entity>
+    <entity type="enemyB">
+        <path>enemy2punksprite.png</path>
+        <posx>490</posx>
+        <posy>150</posy>
+        <width>54</width>
+        <height>100</height>
+        <health>70</health>
+        <isboss>false</isboss>
+        <weapon>
+            <path>Kugelschreiber_projectile.png</path>
+            <damage>18</damage>
+            <speed>6</speed>
+            <cooldown>80</cooldown>
+            <gravity>false</gravity>
+            <sound>kugelschreiber_sound.ogg</sound>
+            <image>kugelschreiber.png</image>
+        </weapon>
+        <speedx>2.5</speedx>
+        <speedy>3</speedy>
+        <moveduration>130</moveduration>
+        <damagesound>punk_dmg.ogg</damagesound>
+    </entity>
+    <entity type="enemyB">
+        <path>enemy2punksprite.png</path>
+        <posx>1960</posx>
+        <posy>720</posy>
+        <width>54</width>
+        <height>100</height>
+        <health>70</health>
+        <isboss>false</isboss>
+        <weapon>
+            <path>Kugelschreiber_projectile.png</path>
+            <damage>18</damage>
+            <speed>5</speed>
+            <cooldown>120</cooldown>
+            <gravity>false</gravity>
+            <sound>kugelschreiber_sound.ogg</sound>
+            <image>kugelschreiber.png</image>
+        </weapon>
+        <speedx>2.5</speedx>
+        <speedy>3</speedy>
+        <moveduration>20</moveduration>
+        <damagesound>punk_dmg.ogg</damagesound>
+    </entity>
+
+    <entity type="healthpack">
+        <path>durstloescher.png</path>
+        <posx>840</posx>
+        <posy>500</posy>
+
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>50</heal>
+        <sound>durstloescher.ogg</sound>
+    </entity>
+    <entity type="healthpack">
+        <path>durstloescher.png</path>
+        <posx>2620</posx>
+        <posy>440</posy>
+
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>50</heal>
+        <sound>durstloescher.ogg</sound>
+    </entity>
+    <entity type="coffeepack">
+        <path>coffee.png</path>
+        <posx>520</posx>
+        <posy>200</posy>
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>20</heal>
+        <sound>kaffee.ogg</sound>
+    </entity>
+
+    <entity type="coffeepack">
+        <path>coffee.png</path>
+        <posx>3100</posx>
+        <posy>280</posy>
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>20</heal>
+        <sound>kaffee.ogg</sound>
+    </entity>
+    <entity type="weapon">
+        <path>pinsel.png</path>
+        <posx>2860</posx>
+        <posy>360</posy>
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <sound>pinselpickup.ogg</sound>
+        <weapon>
+            <path>pinselprojectile.png</path>
+            <damage>50</damage>
+            <speed>20</speed>
+            <cooldown>30</cooldown>
+            <gravity>true</gravity>
+            <sound>pinsel.ogg</sound>
+            <image>pinsel.png</image>
+        </weapon>
+    </entity>
 
 
 

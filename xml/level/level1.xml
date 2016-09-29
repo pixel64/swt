@@ -464,7 +464,7 @@
             <speed>6</speed>
             <cooldown>80</cooldown>
             <gravity>false</gravity>
-            <sound>test.ogg</sound>
+            <sound>kugelschreiber_sound.ogg</sound>
             <image>kugelschreiber.png</image>
         </weapon>
         <speedx>3</speedx>

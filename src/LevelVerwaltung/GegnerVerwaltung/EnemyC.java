@@ -19,7 +19,7 @@ public class EnemyC extends Enemy{
     public void update(Level l) {
         if(!aggro) {
             if (l.getPlayer().getY() < getY() + getHeight() && l.getPlayer().getY() + l.getPlayer().getHeight() > getY()) {
-                if (Math.abs(l.getPlayer().getX() - getX()) < 200)
+                if (Math.abs(l.getPlayer().getX() - getX()) < 360)
                     aggro = true;
             }
         }

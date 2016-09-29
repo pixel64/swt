@@ -59,6 +59,7 @@ public class Enemy extends LevelEntity {
             health -= damage;
             damagetaken.play();
             if(health <= 0) dead = true;
+            damagetaken.play();
         }
         //System.out.println(health);
     }
@@ -100,8 +101,8 @@ public class Enemy extends LevelEntity {
         if(shotCDticks < 0) shotCDticks=0;
         if(currentPatternTicks<0) currentPatternTicks=0;
         setOnGround(false);
+        if(flying) setSpeedY(0); else setSpeedY(getSpeedY()+l.getGravitation());
         setY(getY()+getSpeedY());
-        if(!flying) setSpeedY(getSpeedY()+l.getGravitation());
     }
 
     public Weapon getWeapon() {

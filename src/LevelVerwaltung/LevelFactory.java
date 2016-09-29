@@ -63,6 +63,9 @@ public final class LevelFactory {
             case "bossB":
                 level.addEnemy(createBossB(element));
                 break;
+            case "bossC":
+                level.addEnemy(createBossC(element));
+                break;
             case "healthpack":
                 level.addTile(createHealthPack(element));
                 break;
@@ -246,7 +249,7 @@ public final class LevelFactory {
                 Double.parseDouble(e.getElementsByTagName("posy").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("width").item(0).getTextContent()),
                 Integer.parseInt(e.getElementsByTagName("height").item(0).getTextContent()),
-                7,
+                5,
                 Integer.parseInt(e.getElementsByTagName("health").item(0).getTextContent()),
                 Boolean.parseBoolean(e.getElementsByTagName("isboss").item(0).getTextContent()),
                 createWeapon(e.getElementsByTagName("weapon").item(0)),

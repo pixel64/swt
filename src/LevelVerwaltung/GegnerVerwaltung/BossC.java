@@ -28,37 +28,36 @@ public class BossC extends Enemy {
         }
         double distancex = Math.abs(getX()-l.getPlayer().getX());
         double distancey = Math.abs(getY()-l.getPlayer().getY());
-        boolean nearplayer = (distancex < 500 && distancey<600);
+        boolean nearplayer = (distancex < 1000 && distancey<600);
         if(walkingright){
             setX(getX()+getSpeedX());
-            setAnimationPhase(7-  (((double)shotCDticks/getWeapon().getCooldownTicks())*8));
-            if(getAnimationPhase()<3) {
-                setAnimationPhase(3.3);
-            }
+         /*   if(shotCDticks <= 15){
+                setAnimationPhase(7- shotCDticks/5.0);
+            } */
             if(shotCDticks <= 0){
                 l.addShot(new Shot(
                         getWeapon().getProjectileImagePath(),
-                        getX()+getWidth(), getY() + getHeight() *1/3, 60, 60, 8, +getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
+                        getX()+getWidth()/2, getY() + getHeight() *1/3, 60, 60, 1, +1, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                 ));
                 shotCDticks = getWeapon().getCooldownTicks();
             }
 
         }else{
             setAnimationPhase(7-  (((double)shotCDticks/getWeapon().getCooldownTicks())*8));
-            if(getAnimationPhase()<3) {
-                setAnimationPhase(3.3);
-            }
+            /*if(shotCDticks <= 15){
+                setAnimationPhase(7- shotCDticks/5.0);
+            }*/
             setX(getX()-getSpeedX());
             if(shotCDticks <= 0){
                 l.addShot(new Shot(
                         getWeapon().getProjectileImagePath(),
-                        getX()-getWidth(), getY() + getHeight() *1/3, 60, 60, 8, -getWeapon().getSpeed(), (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
+                        getX()-getWidth()/2, getY() + getHeight() *1/3, 60, 60, 1, -1, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                 ));
                 shotCDticks = getWeapon().getCooldownTicks();
             }
         }
-        setAnimationPhase(getMaxAnimPhase()-0.2);
-        if(getAnimationPhase() < 0) setAnimationPhase(2.9);
+        setAnimationPhase(getAnimationPhase()-0.1);
+        if(getAnimationPhase() < -0.0001) setAnimationPhase(4.9);
         this.movingticks--;
         super.update(l);
     }

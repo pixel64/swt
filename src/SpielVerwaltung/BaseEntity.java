@@ -25,7 +25,7 @@ public class BaseEntity {
             this.y = y;
             this.maxAnimPhase= maxAnimPhase;
             try {
-               // System.out.println(path);
+                //System.out.println(path);
                 img = new Image("res/img/"+path);
             } catch (SlickException e) {
                 e.printStackTrace();
