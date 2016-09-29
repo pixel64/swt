@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<level backgroundimage = "level1background.png" playerposx="1200" playerposy="3660">
+<level backgroundimage = "level3background.png" playerposx="1200" playerposy="3660">
     <entity type="tile">
         <path>wall30hor.png</path>
         <posx>1000</posx>
@@ -601,7 +601,16 @@
         <boost>2.5</boost>
         <damagesound>zombie_dmg.ogg</damagesound>
     </entity>
-
+    <entity type="coffeepack">
+        <path>coffee.png</path>
+        <posx>2320</posx>
+        <posy>2070</posy>
+        <width>20</width>
+        <height>20</height>
+        <animphases>2</animphases>
+        <heal>20</heal>
+        <sound>kaffee.ogg</sound>
+    </entity>
 
 
 
