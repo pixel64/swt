@@ -27,7 +27,7 @@ public class Tile extends LevelEntity {
             //Von Links
             if (distleft <= distright)
             {
-                if (disttop <= distleft  || disttop <= p.getSpeedY()+0.0001)// Abstand Oben < Abstand links
+                if ((disttop <= distleft && distleft >= Math.abs(p.getSpeedX())&& p.getSpeedY() >= 0))// Abstand Oben < Abstand links
                 {
                     //System.out.println("1");
                     p.setY(getY() - p.getHeight());
@@ -38,14 +38,13 @@ public class Tile extends LevelEntity {
                 // Abstand links < Abstand Oben
                 {
                     //System.out.println("2");
-                    p.setSpeedX(0);
                     p.setX(getX() - p.getWidth());
                 }
             }
             else
             //Von Rechts
             {
-                if (disttop <= distright || disttop <= p.getSpeedY()+0.0001)// Abstand Oben < Abstand rechts
+                if ((disttop <= distright&& distright >= Math.abs(p.getSpeedX()) && p.getSpeedY() >= 0))// Abstand Oben < Abstand rechts
                 {
                     //System.out.println("3");
                     p.setY(getY() - p.getHeight());
@@ -57,7 +56,6 @@ public class Tile extends LevelEntity {
                 // Abstand rechts < Abstand Oben
                 {
                     //System.out.println("4");
-                    p.setSpeedX(0);
                     p.setX(getX() + getWidth());
                 }
 
@@ -80,7 +78,6 @@ public class Tile extends LevelEntity {
                 // Abstand links < Abstand Unten
                 {
                     //System.out.println("6");
-                    p.setSpeedX(0);
                     p.setX(getX() - p.getWidth());
 
                 }
@@ -98,7 +95,6 @@ public class Tile extends LevelEntity {
                 // Abstand rechts < Abstand Unten
                 {
                     //System.out.println("8");
-                    p.setSpeedX(0);
                     p.setX(getX() + getWidth());
 
                 }

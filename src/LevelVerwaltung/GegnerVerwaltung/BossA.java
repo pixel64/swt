@@ -8,22 +8,31 @@ import LevelVerwaltung.SchussVerwaltung.Weapon;
  * Created by Kenanja on 27.09.2016.
  */
 public class BossA extends Enemy {
-
+    private boolean aggro;
     private boolean walkingright;
     private static double jumpPower;
     private boolean stasis;
     private int jumpcd;
     public BossA(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY,String damagesound) {
         super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY ,damagesound);
-        jumpPower= 15;
+        jumpPower= 12;
         jumpcd = 50;
         walkingright = true;
         stasis= false;
+        isInvulnerable = true;
+        this.aggro = false;
     }
 
     @Override
     public void update(Level l) {
-        if(currentPatternTicks <= 0){
+        if(!aggro){
+            if (l.getPlayer().getY() < getY() + getHeight() && l.getPlayer().getY() + l.getPlayer().getHeight() > getY()) {
+                if (Math.abs(l.getPlayer().getX() - getX()) < 600)
+                    aggro = true;
+                    isInvulnerable = false;
+            }
+
+        }else if(currentPatternTicks <= 0){
             currentPattern = (int)(Math.random() * 5);
             // System.out.println("AI-Pattern:"+currentPattern);
             switch(currentPattern){

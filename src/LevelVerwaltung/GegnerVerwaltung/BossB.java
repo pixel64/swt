@@ -7,11 +7,11 @@ import LevelVerwaltung.SchussVerwaltung.Weapon;
  * Created by Kenanja on 27.09.2016.
  */
 public class BossB extends Enemy {
-    private boolean aggro;
     private boolean walkingright;
     private double speedmultiplier;
     private int speedTicks;
     private int speedCD;
+    private boolean aggro;
     public BossB(String path, double x, double y, int width, int height, int maxAnimPhase, int health, boolean isBoss, Weapon weapon, double speedX, double speedY, double speedmultiplier,String damagesound) {
         super(path, x, y, width, height, maxAnimPhase, health, isBoss, weapon, speedX, speedY,damagesound);
         aggro =false;

@@ -470,7 +470,7 @@
         <speedx>3</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
-        <damagesound>test.ogg</damagesound>
+        <damagesound>punk_dmg.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -492,7 +492,7 @@
         <speedx>2</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
-        <damagesound>test.ogg</damagesound>
+        <damagesound>zombie_dmg.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -514,7 +514,7 @@
         <speedx>2</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
-        <damagesound>test.ogg</damagesound>
+        <damagesound>zombie_dmg.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -536,7 +536,7 @@
         <speedx>2</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
-        <damagesound>test.ogg</damagesound>
+        <damagesound>zombie_dmg.ogg</damagesound>
     </entity>
     <entity type="enemyC">
         <path>zombiesprite.png</path>
@@ -558,7 +558,7 @@
         <speedx>2.5</speedx>
         <speedy>3</speedy>
         <moveduration>60</moveduration>
-        <damagesound>test.ogg</damagesound>
+        <damagesound>zombie_dmg.ogg</damagesound>
     </entity>
 
     <entity type="bossB">
@@ -581,7 +581,7 @@
         <speedx>2.15</speedx>
         <speedy>3</speedy>
         <boost>2.5</boost>
-        <damagesound>test.ogg</damagesound>
+        <damagesound>boss1_dmg.ogg</damagesound>
     </entity>
 
     <entity type="coffeepack">
@@ -592,7 +592,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <heal>20</heal>
-        <sound>coffee.ogg</sound>
+        <sound>kaffee.ogg</sound>
     </entity>
 
 
@@ -605,7 +605,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <heal>60</heal>
-        <sound>heal.ogg</sound>
+        <sound>durstloescher.ogg</sound>
     </entity>
     <entity type="coffeepack">
         <path>coffee.png</path>
@@ -615,7 +615,7 @@
         <height>20</height>
         <animphases>2</animphases>
         <heal>20</heal>
-        <sound>coffee.ogg</sound>
+        <sound>kaffee.ogg</sound>
     </entity>
     <entity type="weapon">
         <path>edding.png</path>
@@ -631,7 +631,7 @@
             <speed>15</speed>
             <cooldown>30</cooldown>
             <gravity>false</gravity>
-            <sound>test.ogg</sound>
+            <sound>edding.ogg</sound>
             <image>edding.png</image>
         </weapon>
     </entity>
