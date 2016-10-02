@@ -532,11 +532,11 @@
         <animphases>1</animphases>
     </entity>
     <entity type="tile">
-        <path>wall8ver.png</path>
+        <path>wall16ver.png</path>
         <posx>3560</posx>
-        <posy>500</posy>
+        <posy>280</posy>
         <width>40</width>
-        <height>320</height>
+        <height>640</height>
         <animphases>1</animphases>
     </entity>
 

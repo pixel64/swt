@@ -93,4 +93,8 @@ public class BaseEntity {
     }
 
     public int getMaxAnimPhase() {return maxAnimPhase;}
+
+    public void setHitbox(Shape hitbox) {
+        this.hitbox = hitbox;
+    }
 }
