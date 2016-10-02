@@ -40,7 +40,7 @@ public class Fire extends Tile {
                 // Abstand links < Abstand Oben
                 {
                     //System.out.println("2");
-                    e.setX(getX() - e.getWidth());
+                    e.setX(getHitbox().getX() - e.getWidth());
                 }
             }
             else
@@ -49,7 +49,7 @@ public class Fire extends Tile {
                 if (disttop <= distright || disttop <= e.getSpeedY()+0.0001)// Abstand Oben < Abstand rechts
                 {
                     //System.out.println("3");
-                    e.setY(getY() - e.getHeight());
+                    e.setY(getHitbox().getY() - e.getHeight());
                     e.setOnGround(true);
                     e.setSpeedY(0);
 
@@ -58,7 +58,7 @@ public class Fire extends Tile {
                 // Abstand rechts < Abstand Oben
                 {
                     //System.out.println("4");
-                    e.setX(getX() + getWidth());
+                    e.setX(getHitbox().getX() + getWidth()-10);
                 }
 
             }
@@ -72,7 +72,7 @@ public class Fire extends Tile {
                 if (distbot < distleft || disttop <= Math.abs(e.getSpeedY()+0.0001))// Abstand Unten < Abstand links
                 {
                     //System.out.println("5");
-                    e.setY(getY() + getHeight());
+                    e.setY(getHitbox().getY() + getHeight()-5);
                     e.setSpeedY(1);
 
                 }
@@ -90,14 +90,14 @@ public class Fire extends Tile {
                 if (distbot < distright  || disttop <= Math.abs(e.getSpeedY()+0.0001))// Abstand Unten < Abstand rechts
                 {
                     //System.out.println("7");
-                    e.setY(getY() + getHeight());
+                    e.setY(getY() + getHeight()-5);
                     e.setSpeedY(1);
                 }
                 else
                 // Abstand rechts < Abstand Unten
                 {
                     //System.out.println("8");
-                    e.setX(getX() + getWidth());
+                    e.setX(getHitbox().getX() + getWidth()-10);
 
                 }
 
