@@ -571,7 +571,28 @@
         <moveduration>300</moveduration>
         <damagesound>punk_dmg.ogg</damagesound>
     </entity>
-
+    <entity type="bossB">
+        <path>zombiespritebig.png</path>
+        <posx>1400</posx>
+        <posy>2560</posy>
+        <width>40</width>
+        <height>85</height>
+        <health>100</health>
+        <isboss>false</isboss>
+        <weapon>
+            <path>Kugelschreiber_projectile.png</path>
+            <damage>40</damage>
+            <speed>6</speed>
+            <cooldown>80</cooldown>
+            <gravity>false</gravity>
+            <sound>test.ogg</sound>
+            <image>kugelschreiber.png</image>
+        </weapon>
+        <speedx>1.75</speedx>
+        <speedy>3</speedy>
+        <boost>2.5</boost>
+        <damagesound>zombie_dmg.ogg</damagesound>
+    </entity>
 
 
 
@@ -618,7 +639,7 @@
 
 
     <entity type="bossC">
-        <path>wall.png</path>
+        <path>boss3sprite.png</path>
         <posx>1160</posx>
         <posy>1750</posy>
         <width>75</width>
@@ -626,17 +647,17 @@
         <health>300</health>
         <isboss>true</isboss>
         <weapon>
-            <path>rj45.png</path>
+            <path>boss3projectile.png</path>
             <damage>10</damage>
             <speed>2.15</speed>
             <cooldown>50</cooldown>
             <gravity>true</gravity>
-            <sound>rj45.ogg</sound>
+            <sound>tv.ogg</sound>
             <image>kugelschreiber.png</image>
         </weapon>
         <speedx>2.15</speedx>
         <speedy>12</speedy>
         <movingticks>400</movingticks>
-        <damagesound>boss2_dmg.ogg</damagesound>
+        <damagesound>boss3_dmg.ogg</damagesound>
     </entity>
 </level>

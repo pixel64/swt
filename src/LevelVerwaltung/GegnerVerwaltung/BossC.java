@@ -3,6 +3,8 @@ package LevelVerwaltung.GegnerVerwaltung;
 import LevelVerwaltung.Level;
 import LevelVerwaltung.SchussVerwaltung.Shot;
 import LevelVerwaltung.SchussVerwaltung.Weapon;
+import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
 
 /**
  * Created by Kenanja on 29.09.2016.
@@ -37,7 +39,7 @@ public class BossC extends Enemy {
             if(shotCDticks <= 0){
                 l.addShot(new Shot(
                         getWeapon().getProjectileImagePath(),
-                        getX()+getWidth()/2, getY() + getHeight() *1/3, 60, 60, 1, +1, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
+                        getX()+getWidth()/2, getY() + getHeight() *1/3,21, 27, 1, +1, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                 ));
                 shotCDticks = getWeapon().getCooldownTicks();
             }
@@ -51,14 +53,16 @@ public class BossC extends Enemy {
             if(shotCDticks <= 0){
                 l.addShot(new Shot(
                         getWeapon().getProjectileImagePath(),
-                        getX()-getWidth()/2, getY() + getHeight() *1/3, 60, 60, 1, -1, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
+                        getX()+getWidth()/2, getY() + getHeight() *1/3, 21, 27, 1, -1, (getWeapon().isGravity()? -5:0),getWeapon().isGravity(), getWeapon().getDamage(),false, getWeapon().getSound(),nearplayer
                 ));
                 shotCDticks = getWeapon().getCooldownTicks();
             }
         }
-        setAnimationPhase(getAnimationPhase()-0.1);
-        if(getAnimationPhase() < -0.0001) setAnimationPhase(4.9);
+
         this.movingticks--;
         super.update(l);
+        setAnimationPhase(shotCDticks/50.0*4);
+
     }
+
 }
