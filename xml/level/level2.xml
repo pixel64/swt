@@ -444,11 +444,11 @@
         <animphases>1</animphases>
     </entity>
     <entity type="tile">
-        <path>wall8ver.png</path>
+        <path>wall16ver.png</path>
         <posx>3560</posx>
-        <posy>180</posy>
+        <posy>-140</posy>
         <width>40</width>
-        <height>320</height>
+        <height>640</height>
         <animphases>1</animphases>
     </entity>
     <entity type="tile">
@@ -532,11 +532,11 @@
         <animphases>1</animphases>
     </entity>
     <entity type="tile">
-        <path>wall16ver.png</path>
+        <path>wall8ver.png</path>
         <posx>3560</posx>
-        <posy>280</posy>
+        <posy>500</posy>
         <width>40</width>
-        <height>640</height>
+        <height>320</height>
         <animphases>1</animphases>
     </entity>
 
