@@ -641,7 +641,7 @@
     <entity type="bossC">
         <path>boss3sprite.png</path>
         <posx>1160</posx>
-        <posy>1750</posy>
+        <posy>1760</posy>
         <width>75</width>
         <height>100</height>
         <health>300</health>
