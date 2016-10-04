@@ -555,7 +555,7 @@
         <posy>2560</posy>
         <width>54</width>
         <height>100</height>
-        <health>200</health>
+        <health>240</health>
         <isboss>false</isboss>
         <weapon>
             <path>Kugelschreiber_projectile.png</path>
@@ -577,7 +577,7 @@
         <posy>2560</posy>
         <width>40</width>
         <height>85</height>
-        <health>100</health>
+        <health>180</health>
         <isboss>false</isboss>
         <weapon>
             <path>Kugelschreiber_projectile.png</path>
@@ -606,7 +606,7 @@
         <posy>3200</posy>
         <width>40</width>
         <height>85</height>
-        <health>100</health>
+        <health>300</health>
         <isboss>false</isboss>
         <weapon>
             <path>Kugelschreiber_projectile.png</path>

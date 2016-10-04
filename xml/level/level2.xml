@@ -825,7 +825,7 @@
     <entity type="healthpack">
         <path>durstloescher.png</path>
         <posx>2620</posx>
-        <posy>440</posy>
+        <posy>460</posy>
 
         <width>20</width>
         <height>20</height>
@@ -847,7 +847,7 @@
     <entity type="coffeepack">
         <path>coffee.png</path>
         <posx>3100</posx>
-        <posy>280</posy>
+        <posy>300</posy>
         <width>20</width>
         <height>20</height>
         <animphases>2</animphases>
@@ -857,7 +857,7 @@
     <entity type="weapon">
         <path>pinsel.png</path>
         <posx>2860</posx>
-        <posy>360</posy>
+        <posy>380</posy>
         <width>20</width>
         <height>20</height>
         <animphases>2</animphases>
@@ -866,7 +866,7 @@
             <path>pinselprojectile.png</path>
             <damage>50</damage>
             <speed>20</speed>
-            <cooldown>30</cooldown>
+            <cooldown>50</cooldown>
             <gravity>true</gravity>
             <sound>pinsel.ogg</sound>
             <image>pinsel.png</image>
