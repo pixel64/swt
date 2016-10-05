@@ -70,7 +70,9 @@ public class GameController{
                 gameState = 4;
                 levelnumber++;
                 if(levelnumber > maxLevelNumber){
-                    gameState = 5;
+                    gameState = 6;//ending cutscene
+                    Cutscene.getInstance().init();
+                    Cutscene.getInstance().playMusic();
                     menuController.getTitleEntity().setAnimationPhase(exit+2);
                 }else {
                     levelController.loadLevel("level" + levelnumber + ".xml", player);
@@ -98,14 +100,24 @@ public class GameController{
                 return true;
             }
         }
+
+        else if (gameState == 6){
+            if(Cutscene.getInstance().update()){
+                gameState = 5;
+                bgm.loop();
+            }
+        }
         return false;
     }
     public void render(GameContainer gameContainer, Graphics graphics)  throws SlickException {
-        if (gameState != 1) {
+        if (gameState != 1 && gameState != 6) {
             menuController.render(gameContainer, graphics);
         }
         if (gameState == 1){
             levelController.render(gameContainer, graphics);
+        }
+        if (gameState == 6){
+            Cutscene.getInstance().render(gameContainer, graphics);
         }
     }
 
