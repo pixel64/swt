@@ -37,6 +37,7 @@ public class Cutscene {
     public void init(){
         phase= 0;
         bellswinging = false;
+        player.setX(0);
     }
 
     public void playMusic(){

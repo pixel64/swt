@@ -89,6 +89,7 @@ public class GameController{
             }
         }
 
+
         else if (gameState == 3 || gameState == 5){ //Game over oder You win
             int start = menuController.update(gameContainer);
             if(start == 1){ //Spiel starten
